@@ -11,7 +11,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		
 		try {
-			new MainWindow();
+			new MainWindow(primaryStage);
 		} 
 		catch(Exception e) {
 			e.printStackTrace();
