@@ -65,7 +65,7 @@ public class Boardmonop extends Board {
 		
 		/* INITIALISATION DES JOUEURS */
 		for(int i = 0; i < this.getNbJoueurs(); i++) {
-			this.joueurs.add(new Playermonop("Joueur"+(i+1), i, 1000));
+			this.joueurs.add(new Playermonop("Joueur"+(i+1), i, 150000));
 		}
 		
 		/* INITIALISATION DES CASES*/
