@@ -72,19 +72,19 @@ public class Boardmonop extends Board {
 		setCase(0, new CaseDepart());
 		setCase(2, new CaseCommunaute());
 		setCase(4, new CaseImpots("Impots sur le revenu", 200));
-		setCase(5, new CaseGare("Gare Montparnasse"));
+		setCase(5, new CaseGare("Gare SUPRATOUR"));
 		setCase(7, new CaseChance());
 		setCase(10, new CasePrison());
 		setCase(12, new CaseServicePublic("Compagnie d'électricité"));
-		setCase(15, new CaseGare("Gare de Lyon"));
+		setCase(15, new CaseGare("Gare BAB DOUKKALA"));
 		setCase(17, new CaseCommunaute());
 		setCase(20, new CaseParcGratuit());
 		setCase(22, new CaseChance());
-		setCase(25, new CaseGare("Gare du Nord"));
+		setCase(25, new CaseGare("Gare CTM"));
 		setCase(28, new CaseServicePublic("Compagnie des eaux"));
 		setCase(30, new CaseAllerPrison());
 		setCase(33, new CaseCommunaute());
-		setCase(35, new CaseGare("Gare Saint-Lazare"));
+		setCase(35, new CaseGare("Gare ONCF GUELIZ"));
 		setCase(36, new CaseChance());
 		setCase(38, new CaseImpots("Taxe de Luxe", 100));
 		
@@ -133,7 +133,7 @@ public class Boardmonop extends Board {
 		chance.add(new CarteDeplacement("Avenue MOHAMMED 6", "Rendez-vous Avenue MOHAMMED 6.", 39, false));
 		chance.add(new CarteDeplacement("Avenue MOHAMMED V", "Rendez-vous à l'Avenue MOHAMMED V. \nSi vous passez par la case départ, recevez 20000DH.", 24, false));
 		chance.add(new CarteDeplacement("Avenue KHALID IBN ALOUALID", "Avancez au Boulevard de KHALID IBN ALOUALID. \nSi vous passez par la case départ, 20000DH.", 11, false));
-		chance.add(new CarteDeplacement("Gare de Lyon", "Avancez à la gare de Lyon. \nSi vous passez par la case départ, recevez 200€.", 15, false));
+		chance.add(new CarteDeplacement("Gare BAB DOUKKALA", "Avancez à la Gare BAB DOUKKALA. \nSi vous passez par la case départ, recevez 20000DH.", 15, false));
 		chance.add(new CarteDeplacement("Reculez", "Reculez de 3 cases.", -3, true));
 		chance.add(new CarteDeplacement("Nv Depart", "Le joueur déménage et prend un \nnouveau départ au Technopole.", 0, false));
 
