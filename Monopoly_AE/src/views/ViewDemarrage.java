@@ -35,7 +35,7 @@ public class ViewDemarrage {
 	private MainWindow fp;
 	private Stage stage;
 	private VBox root;
-	private Label l_NbJoueurs;private Label l_NbJoueurs2;
+	private Label l_NbJoueurs;
 	private ArrayList<TextField> listeJoueurs = new ArrayList<TextField>();
 	private Button b_Valider;
 	private int choix = 0;
@@ -90,7 +90,7 @@ public class ViewDemarrage {
 		root.setSpacing(5);
        // root.resize(884, 495);
 
-		l_NbJoueurs = new Label("Noms des joueurs (2 au moins) :");
+		l_NbJoueurs = new Label("Noms des joueurs (2 minimum) :");
 		
 
 
@@ -102,7 +102,7 @@ public class ViewDemarrage {
 		vBox1.setDepthTest(DepthTest.INHERIT);
 		vBox1.setNodeOrientation(NodeOrientation.LEFT_TO_RIGHT);
 		vBox1.setCenterShape(true);
-		l_NbJoueurs2.setCenterShape(true);
+		
 
 		ImageView imageView1=new ImageView();
 		imageView1.setFitHeight(500.0);
@@ -118,7 +118,7 @@ public class ViewDemarrage {
 
 
 
-		vBox1.getChildren().add(l_NbJoueurs2);
+		
 
 
 
@@ -149,7 +149,7 @@ public class ViewDemarrage {
 		vBox2.setDepthTest(DepthTest.INHERIT);
 		vBox2.setNodeOrientation(NodeOrientation.LEFT_TO_RIGHT);
 		vBox2.setCenterShape(true);
-		l_NbJoueurs2.setCenterShape(true);
+		
 
 		ImageView imageView2=new ImageView();
 		imageView2.setFitHeight(300.0);
