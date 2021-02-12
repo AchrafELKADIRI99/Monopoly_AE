@@ -91,9 +91,9 @@ public class MainWindow {
 		Des.add(new ImageView());
 		Des.add(new ImageView());
 		Des.get(0).setTranslateX(247);
-		Des.get(0).setTranslateY(360);
+		Des.get(0).setTranslateY(400);
 		Des.get(1).setTranslateX(337);
-		Des.get(1).setTranslateY(360);
+		Des.get(1).setTranslateY(400);
 		root.getChildren().add(Des.get(0));
 		root.getChildren().add(Des.get(1));
 		
@@ -107,8 +107,11 @@ public class MainWindow {
 		l_Message.setMaxWidth(470);
 		root.getChildren().add(l_Message);
 
-		tourSuivant.setTranslateX(473);
+		tourSuivant.setTranslateX(285);
 		tourSuivant.setTranslateY(533);
+		tourSuivant.setStyle("-fx-background-color: #ed1c24;-fx-text-fill: white;-fx-background-radius: 30px");
+		tourSuivant.setMaxWidth(100);
+		tourSuivant.setMaxHeight(30);
 		tourSuivant.setOnAction(new EvtTourSuivant());
 		tourSuivant.setDefaultButton(true);
 		if(!partie.PARTIE_AUTO)
