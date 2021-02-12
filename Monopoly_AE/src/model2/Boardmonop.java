@@ -72,19 +72,19 @@ public class Boardmonop extends Board {
 		setCase(0, new CaseDepart());
 		setCase(2, new CaseCommunaute());
 		setCase(4, new CaseImpots("Impots sur le revenu", 200));
-		setCase(5, new CaseGare("Gare CTM"));
+		setCase(5, new CaseGare("Gare SUPRATOUR"));
 		setCase(7, new CaseChance());
 		setCase(10, new CasePrison());
 		setCase(12, new CaseServicePublic("Compagnie d'électricité"));
-		setCase(15, new CaseGare("Gare ONCF GUELIZ"));
+		setCase(15, new CaseGare("Gare BAB DOUKKALA"));
 		setCase(17, new CaseCommunaute());
 		setCase(20, new CaseParcGratuit());
 		setCase(22, new CaseChance());
-		setCase(25, new CaseGare("Gare BAB DOUKKALA"));
+		setCase(25, new CaseGare("Gare CTM"));
 		setCase(28, new CaseServicePublic("Compagnie des eaux"));
 		setCase(30, new CaseAllerPrison());
 		setCase(33, new CaseCommunaute());
-		setCase(35, new CaseGare("Gare SUPRATOUR"));
+		setCase(35, new CaseGare("Gare ONCF GUELIZ"));
 		setCase(36, new CaseChance());
 		setCase(38, new CaseImpots("Taxe de Luxe", 100));
 		
