@@ -90,8 +90,8 @@ public class ViewDemarrage {
 		root.setSpacing(5);
        // root.resize(884, 495);
 
-		l_NbJoueurs = new Label("Noms des joueurs (2 minimum) :");
-		l_NbJoueurs2 = new Label("                                                        Coder par Hegel Motokoua");
+		l_NbJoueurs = new Label("Noms des joueurs (2 au moins) :");
+		
 
 
 		VBox vBox1 =new VBox();
