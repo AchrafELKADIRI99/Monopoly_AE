@@ -96,7 +96,7 @@ public class Boardmonop extends Board {
 		setCase(8, new CaseTerrain("JNANE AWRAD", 15000, new ArrayList<Integer>(Arrays.asList(900, 4500, 13500, 40500, 60000, 82500)), 75000, 0, "turquoise"));
 		setCase(9, new CaseTerrain("HAY ZITOUN", 18000, new ArrayList<Integer>(Arrays.asList(1200, 6000, 15000, 45000, 67500, 90000)), 75000, 0, "turquoise"));
 		
-		setCase(11, new CaseTerrain("AVENUE KHALID IBN ALOUALID", 21000, new ArrayList<Integer>(Arrays.asList(1500, 7500, 22500, 67500, 93750, 112500)), 15000, 0, "mauve"));
+		setCase(11, new CaseTerrain("MASSIRA 1", 21000, new ArrayList<Integer>(Arrays.asList(1500, 7500, 22500, 67500, 93750, 112500)), 15000, 0, "mauve"));
 		setCase(13, new CaseTerrain("MASSIRA 2", 21000, new ArrayList<Integer>(Arrays.asList(1500, 7500, 22500, 67500, 93750, 112500)), 15000, 0, "mauve"));
 		setCase(14, new CaseTerrain("MASSIRA 3", 24000, new ArrayList<Integer>(Arrays.asList(1800, 9000, 27000, 75000, 105000, 135000)), 15000, 0, "mauve"));
 		
@@ -106,7 +106,7 @@ public class Boardmonop extends Board {
 		
 		setCase(21, new CaseTerrain("AIN ITTI", 33000, new ArrayList<Integer>(Arrays.asList(2700, 13500, 37500, 105000, 131250, 157500)), 22500, 0, "rouge"));
 		setCase(23, new CaseTerrain("M'HAMID", 33000, new ArrayList<Integer>(Arrays.asList(2700, 13500, 37500, 105000, 131250, 157500)), 22500, 0, "rouge"));
-		setCase(24, new CaseTerrain("Avenue MOHAMMED V", 36000, new ArrayList<Integer>(Arrays.asList(3000, 15000, 45000, 112500, 138750, 165000)), 22500, 0, "rouge"));
+		setCase(24, new CaseTerrain("BIN LKCHALI", 36000, new ArrayList<Integer>(Arrays.asList(3000, 15000, 45000, 112500, 138750, 165000)), 22500, 0, "rouge"));
 		
 		setCase(26, new CaseTerrain("AIN MEZZOUAR", 39000, new ArrayList<Integer>(Arrays.asList(3300, 16500, 49500, 120000, 146250, 172500)), 22500, 0, "jaune"));
 		setCase(27, new CaseTerrain("AZLI", 39000, new ArrayList<Integer>(Arrays.asList(3300, 16500, 49500, 120000, 146250, 172500)), 22500, 0, "jaune"));
@@ -117,7 +117,7 @@ public class Boardmonop extends Board {
 		setCase(34, new CaseTerrain("GUELIZ", 48000, new ArrayList<Integer>(Arrays.asList(4200, 22500, 67500, 150000, 180000, 210000)), 30000, 0, "vert"));
 		
 		setCase(37, new CaseTerrain("TARGA", 52500, new ArrayList<Integer>(Arrays.asList(5250, 26250, 75000, 165000, 195000, 225000)), 30000, 0, "bleu"));
-		setCase(39, new CaseTerrain("Avenue MOHAMMED 6", 60000, new ArrayList<Integer>(Arrays.asList(7500, 30000, 90000, 210000, 255000, 300000)), 30000, 0, "bleu"));
+		setCase(39, new CaseTerrain("NAKHIL", 60000, new ArrayList<Integer>(Arrays.asList(7500, 30000, 90000, 210000, 255000, 300000)), 30000, 0, "bleu"));
 		
 		
 		/* INITIALISATION DES CARTES CHANCES */
@@ -130,9 +130,9 @@ public class Boardmonop extends Board {
 		chance.add(new CarteRecevoirArgent("Mots croisés", "Vous avez gagné le prix de mots-croisés ! \nRecevez 15000DH.", 15000));*/
 		
 		chance.add(new CarteDeplacement("Case Départ", "Avancez jusqu'à la case départ. \n(Recevez 20000DH)", 0, false));
-		chance.add(new CarteDeplacement("Avenue MOHAMMED 6", "Rendez-vous Avenue MOHAMMED 6.", 39, false));
-		chance.add(new CarteDeplacement("Avenue MOHAMMED V", "Rendez-vous à l'Avenue MOHAMMED V. \nSi vous passez par la case départ, recevez 20000DH.", 24, false));
-		chance.add(new CarteDeplacement("Avenue KHALID IBN ALOUALID", "Avancez au Boulevard de KHALID IBN ALOUALID. \nSi vous passez par la case départ, 20000DH.", 11, false));
+		chance.add(new CarteDeplacement("NAKHIL", "Rendez-vous à NAKHIL.", 39, false));
+		chance.add(new CarteDeplacement("BIN LKCHALI", "Rendez-vous à BIN LKCHALI. \nSi vous passez par la case départ, recevez 20000DH.", 24, false));
+		chance.add(new CarteDeplacement("MASSIRA 1", "Avancez à MASSIRA 1. \nSi vous passez par la case départ, 20000DH.", 11, false));
 		chance.add(new CarteDeplacement("Gare BAB DOUKKALA", "Avancez à la Gare BAB DOUKKALA. \nSi vous passez par la case départ, recevez 20000DH.", 15, false));
 		chance.add(new CarteDeplacement("Reculez", "Reculez de 3 cases.", -3, true));
 		chance.add(new CarteDeplacement("Nv Depart", "Le joueur déménage et prend un \nnouveau départ au Technopole.", 0, false));
