@@ -30,6 +30,7 @@ public abstract class Case {
 	private int valeur = 0;
 	
 	/* ON A RIEN VU */
+
 	private Polygon marqueur = new Polygon();
 	public ArrayList<Polygon> maisons = new ArrayList<Polygon>();
 	
@@ -44,6 +45,7 @@ public abstract class Case {
 		/* OUI ON SAIT QUE C'EST PAS BIEN, PARDON */
 		for(int i=0; i<5; i++) {
 			Polygon maison = new Polygon();
+
 			maisons.add(maison);
 		}
 	}
