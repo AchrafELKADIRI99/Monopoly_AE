@@ -71,7 +71,7 @@ public class Boardmonop extends Board {
 		/* INITIALISATION DES CASES*/
 		setCase(0, new CaseDepart());
 		setCase(2, new CaseCommunaute());
-		setCase(4, new CaseImpots("Impots sur le revenu", 200));
+		setCase(4, new CaseImpots("Impots sur le revenu", 30000));
 		setCase(5, new CaseGare("Gare SUPRATOUR"));
 		setCase(7, new CaseChance());
 		setCase(10, new CasePrison());
@@ -86,7 +86,7 @@ public class Boardmonop extends Board {
 		setCase(33, new CaseCommunaute());
 		setCase(35, new CaseGare("Gare ONCF GUELIZ"));
 		setCase(36, new CaseChance());
-		setCase(38, new CaseImpots("Taxe de Luxe", 100));
+		setCase(38, new CaseImpots("Taxe de Luxe", 15000));
 		
 		/* INITIALISATION DES TERRAINS */
 		setCase(1, new CaseTerrain("DOHA", 9000, new ArrayList<Integer>(Arrays.asList(300, 1500, 4500, 13500, 24000, 37500)), 75000, 0, "brun"));
