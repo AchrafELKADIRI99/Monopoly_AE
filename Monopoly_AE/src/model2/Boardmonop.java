@@ -133,7 +133,7 @@ public class Boardmonop extends Board {
 		chance.add(new CarteDeplacement("Avenue MOHAMMED 6", "Rendez-vous Avenue MOHAMMED 6.", 39, false));
 		chance.add(new CarteDeplacement("Avenue MOHAMMED V", "Rendez-vous à l'Avenue MOHAMMED V. \nSi vous passez par la case départ, recevez 20000DH.", 24, false));
 		chance.add(new CarteDeplacement("Avenue KHALID IBN ALOUALID", "Avancez au Boulevard de KHALID IBN ALOUALID. \nSi vous passez par la case départ, 20000DH.", 11, false));
-		chance.add(new CarteDeplacement("Gare ONCF SUPRATOUR", "Avancez à la Gare ONCF SUPRATOUR. \nSi vous passez par la case départ, recevez 20000DH.", 15, false));
+		chance.add(new CarteDeplacement("Gare de Lyon", "Avancez à la gare de Lyon. \nSi vous passez par la case départ, recevez 200€.", 15, false));
 		chance.add(new CarteDeplacement("Reculez", "Reculez de 3 cases.", -3, true));
 		chance.add(new CarteDeplacement("Nv Depart", "Le joueur déménage et prend un \nnouveau départ au Technopole.", 0, false));
 
