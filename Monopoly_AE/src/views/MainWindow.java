@@ -34,7 +34,7 @@ public class MainWindow {
 	
 	private Stage stage;
 	private StackPane root;
-	private Label l_ParcGratuit = new Label("0€");
+	private Label l_ParcGratuit = new Label("0DH");
 	private Label l_Message = new Label("");
 	private ArrayList <Label> l_Joueurs = new ArrayList <Label>();
 	private ArrayList <Label> l_ListeTerrains = new ArrayList <Label>();
@@ -165,7 +165,7 @@ public class MainWindow {
 			l_nomJoueur.setTranslateY(100);
 			root.getChildren().add(l_nomJoueur);
 			
-			l_Joueurs.add(new Label(""+partie.getPM().getJoueur(i).getArgent()+"€"));
+			l_Joueurs.add(new Label(""+partie.getPM().getJoueur(i).getArgent()+"DH"));
 			l_Joueurs.get(i).setTranslateX(95+i*120);
 			l_Joueurs.get(i).setTranslateY(120);
 			l_Joueurs.get(i).setFont(Font.font("Arial", 15));
@@ -220,10 +220,10 @@ public class MainWindow {
 		Platform.runLater(new Runnable() {
             @Override public void run() {
             	
-        		l_ParcGratuit.setText(""+pm.getCase(20).getPrix()+"€");
+        		l_ParcGratuit.setText(""+pm.getCase(20).getPrix()+"DH");
         		
         		for(int i=0; i<pm.getNbJoueurs(); i++) {
-            		l_Joueurs.get(i).setText(""+pm.getJoueur(i).getArgent()+"€ "+(pm.getJoueur(i).getCarteSortiePrison()?"[S]":""));
+            		l_Joueurs.get(i).setText(""+pm.getJoueur(i).getArgent()+"DH "+(pm.getJoueur(i).getCarteSortiePrison()?"[S]":""));
             		
             		String listeTerrains = pm.getJoueur(i).getListeStringTerrains();
             		listeTerrains = listeTerrains.replaceAll(",", "\n");
@@ -535,7 +535,7 @@ public class MainWindow {
 	 * Réinitialise les éléments graphiques de la fenêtre tels que les labels, les pions et les logs.
 	 */
 	public void resetElementsGraphiques() {
-		l_ParcGratuit.setText("0€");
+		l_ParcGratuit.setText("0DH");
 		l_Joueurs.clear();
 		l_ListeTerrains.clear();
 		l_Pions.clear();

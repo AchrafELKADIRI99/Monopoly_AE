@@ -78,7 +78,7 @@ public class ViewAcheterTerrain {
 		aside.setSpacing(15);
 		root.getChildren().add(aside);
 		
-		l_Texte = new Label("Voulez vous acheter " + fp.getPartie().getPM().getCaseActive().getNom() + " pour " + fp.getPartie().getPM().getCaseActive().getPrix() + "€ ?");
+		l_Texte = new Label("Voulez vous acheter maison à " + fp.getPartie().getPM().getCaseActive().getNom() + " pour " + fp.getPartie().getPM().getCaseActive().getPrix() + "DH ?");
 		aside.getChildren().add(l_Texte);
 
 		HBox buttons_horiz = new HBox();

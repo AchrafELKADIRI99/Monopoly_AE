@@ -90,7 +90,7 @@ public class ViewActionSurTerrain {
 		HBox buttons_horiz = new HBox();
 		buttons_horiz.setSpacing(10);
 		
-		b_Poser = new Button("Poser une maison ("+fp.getPartie().getPM().getCase(position).getPrixMaison()+"€)");
+		b_Poser = new Button("Poser une maison ("+fp.getPartie().getPM().getCase(position).getPrixMaison()+"DH)");
 		b_Poser.setOnAction(new EvtPoser());
 		if(position != 5 && position != 15 && position != 25 && position != 35 && position != 12 && position != 28)
 			buttons_horiz.getChildren().add(b_Poser);
@@ -165,7 +165,7 @@ public class ViewActionSurTerrain {
 		public void handle(ActionEvent event) {
 			
 			int prixRevente = fp.getPartie().getPM().getCase(position).getPrix() + fp.getPartie().getPM().getCase(position).getNbMaison()*fp.getPartie().getPM().getCase(position).getPrixMaison();
-			fp.afficherMessage(fp.getPartie().getPM().getCase(position).getProprietaire().getNom() + " revend " + fp.getPartie().getPM().getCase(position).getNom() + " pour " + prixRevente + "€");
+			fp.afficherMessage(fp.getPartie().getPM().getCase(position).getProprietaire().getNom() + " revend " + fp.getPartie().getPM().getCase(position).getNom() + " pour " + prixRevente + "DH");
 			fp.getPartie().getPM().getJoueurActif().getListeTerrains().remove(fp.getPartie().getPM().getCase(position));
 			fp.getPartie().getPM().getCase(position).setProprietaire(null);
 			fp.getPartie().getPM().getCase(position).getMarqueur().setFill(Color.TRANSPARENT);

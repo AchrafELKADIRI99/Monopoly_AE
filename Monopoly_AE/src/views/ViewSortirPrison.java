@@ -62,7 +62,7 @@ public class ViewSortirPrison {
 		aside.setSpacing(15);
 		root.getChildren().add(aside);
 		
-		l_Texte = new Label("Voulez vous payer 50€ pour sortir de prison ?");
+		l_Texte = new Label("Voulez vous payer 7500DH pour sortir de prison ?");
 		aside.getChildren().add(l_Texte);
 
 		HBox buttons_horiz = new HBox();

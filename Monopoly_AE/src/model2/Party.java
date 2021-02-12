@@ -70,8 +70,8 @@ public class Party {
                 			if(pm.getJoueurActifID() == 0)
                 				es.println("=== DEBUT DU TOUR " + pm.getNbTours() + " ===");
                 				
-                			es.println("C'est au tour de " + joueur.getNom() + " (possède " + joueur.getArgent() + "€)");
-                			fp.afficherMessage("C'est au tour de " + joueur.getNom() + " (possède " + joueur.getArgent() + "€)");
+                			es.println("C'est au tour de " + joueur.getNom() + " (possède " + joueur.getArgent() + "DH)");
+                			fp.afficherMessage("C'est au tour de " + joueur.getNom() + " (possède " + joueur.getArgent() + "DH)");
                 			
                 			if(!joueur.getEstBanqueroute()) {
                 				Thread.sleep(VITESSE_PARTIE);
@@ -102,7 +102,7 @@ public class Party {
                     			
                 				caze.actionCase(joueur, pm, fp);
                     			
-                				es.println("" + joueur.getNom() + " possède à la fin de son tour " + joueur.getArgent() + "€");
+                				es.println("" + joueur.getNom() + " possède à la fin de son tour " + joueur.getArgent() + "DH");
                 				System.out.println("et les terrains suivants :\n" + joueur.getListeStringTerrains());
                 			}
                 			else {
