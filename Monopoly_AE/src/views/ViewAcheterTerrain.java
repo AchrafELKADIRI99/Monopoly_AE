@@ -59,10 +59,10 @@ public class ViewAcheterTerrain {
 		Image i_terrain;
 		
 		switch(fp.getPartie().getPM().getCaseActive().getNom()) {
-		case "Gare Montparnasse": i_terrain = new Image("images/gare.jpg"); break;
-		case "Gare de Lyon": i_terrain = new Image("images/gare.jpg"); break;
-		case "Gare du Nord": i_terrain = new Image("images/gare.jpg"); break;
-		case "Gare Saint-Lazare": i_terrain = new Image("images/gare.jpg"); break;
+		case "Gare CTM": i_terrain = new Image("images/gare.jpg"); break;
+		case "Gare ONCF GUELIZ": i_terrain = new Image("images/gare.jpg"); break;
+		case "Gare BAB DOUKKALA": i_terrain = new Image("images/gare.jpg"); break;
+		case "Gare SUPRATOUR": i_terrain = new Image("images/gare.jpg"); break;
 		case "Compagnie des eaux": i_terrain = new Image("images/eau.jpg"); break;
 		case "Compagnie d'électricité": i_terrain = new Image("images/elec.jpg"); break;
 		default: {

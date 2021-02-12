@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
+
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -62,12 +63,16 @@ public class ViewDemarrage {
 		l_NbJoueurs = new Label("Nombre de joueurs :");
 		root.getChildren().add(l_NbJoueurs);
 		
+        root.setStyle("-fx-background-color: c9f9b6;");
+
+		
 		l_Nombre = new ListView<String>();
 		l_Nombre.setItems(FXCollections.observableArrayList("2", "3", "4"));
 		l_Nombre.getSelectionModel().select(0);
 		root.getChildren().add(l_Nombre);
 		
 		b_Valider = new Button("Valider");
+
 		b_Valider.setOnAction(new EvtValider());
 		root.getChildren().add(b_Valider);
 		
