@@ -47,7 +47,7 @@ public class ViewCarteChance {
 		root = new HBox();
 		initRoot();
 		
-		Scene scene = new Scene(root,440,200);
+		Scene scene = new Scene(root,440,250);
 		stage.setScene(scene);
 		
 		stage.setOnHiding(new EvtQuitter());

@@ -112,7 +112,7 @@ public class ViewAcheterTerrain {
 		root = new HBox();
 		initRoot();
 		
-		Scene scene = new Scene(root,450,130);
+		Scene scene = new Scene(root,565,130);
 		stage.setScene(scene);
 		stage.show();
 	}
