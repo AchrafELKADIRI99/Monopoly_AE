@@ -3,7 +3,7 @@ package model2;
 
 import io.Console;
 import model.Case;
-import windows.MainWindow;
+import views.MainWindow;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
 

@@ -8,7 +8,7 @@ import model.Carte;
 import model.Case;
 import model2.Boardmonop;
 import model2.Playermonop;
-import windows.MainWindow;
+import views.MainWindow;
 
 
 /**
@@ -113,12 +113,12 @@ public class CaseChance extends Case {
 	public static void main(String[] args) {
 		
 		System.out.println("TEST DE LA CLASSE : CaseChance");
-		Playermonop j = new Playermonop("Yann", 0, 1000);
+		Playermonop j = new Playermonop("Yann", 0, 150000);
 		Boardmonop p = new Boardmonop(4);
-		CartePayerArgent payer = new CartePayerArgent("Amende", "Amende pour excès de vitesse : 15€.", 15);
+		CartePayerArgent payer = new CartePayerArgent("Amende", "Amende pour excès de vitesse : 2250Dh.", 2250);
 		System.out.println(payer.toString());
 		payer.actionCarte(j, p, null);
-		System.out.println(j.toString()); //Le joueur Yann perd 15€
+		System.out.println(j.toString()); //Le joueur Yann perd 2250DH
 		System.out.println(p.getCase(20).toString());
 		
 		CarteSortirPrison prison = new CarteSortirPrison("Sortie", "Vous êtes libéré de prison. \n(Cette carte doit être conservée)");

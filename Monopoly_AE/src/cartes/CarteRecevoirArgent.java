@@ -5,7 +5,7 @@ import io.Console;
 import model.Carte;
 import model2.Boardmonop;
 import model2.Playermonop;
-import windows.MainWindow;
+import views.MainWindow;
 
 /**
  * Type de {@link Carte} pour les réceptions de payements des joueurs.<br><br>
@@ -42,17 +42,17 @@ public class CarteRecevoirArgent extends Carte {
 		if(getNom().equals("Anniversaire")) {
 			for(int i=0; i<plateau.getNbJoueurs(); i++) {
 				if(plateau.getJoueur(i) != joueur && !plateau.getJoueur(i).getEstBanqueroute()) {
-					plateau.getJoueur(i).retirerArgent(10);
-					joueur.ajouterArgent(10);
+					plateau.getJoueur(i).retirerArgent(1500);
+					joueur.ajouterArgent(1500);
 				}
 			}
-			es.println(" > "+joueur.getNom()+" reçoit 10€ de chaque joueur.");
+			es.println(" > "+joueur.getNom()+" reçoit 1500DHs de chaque joueur.");
 			if(fp != null)
-				fp.afficherMessage(joueur.getNom()+" reçoit 10€ de chaque joueur.");
+				fp.afficherMessage(joueur.getNom()+" reçoit 1500DHs de chaque joueur.");
 		}
 		else {
 			joueur.ajouterArgent(montant);
-			es.println(" > "+joueur.getNom()+" reçoit "+montant+"€ de la Banque");
+			es.println(" > "+joueur.getNom()+" reçoit "+montant+"DHs de la Banque");
 		}
 	}
 

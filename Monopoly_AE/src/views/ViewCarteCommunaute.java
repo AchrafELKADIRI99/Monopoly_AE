@@ -1,4 +1,4 @@
-package windows;
+package views;
 
 import cases.CaseCommunaute;
 import javafx.event.ActionEvent;
@@ -20,7 +20,7 @@ import javafx.stage.WindowEvent;
  * Fenêtre à afficher lorqu'on atterit sur une {@link CaseCommunaute}.
  * @see FenetrePrincipale
  */
-public class FenetreCarteCommunaute {
+public class ViewCarteCommunaute {
 
 	private MainWindow fp;
 	private Stage stage;
@@ -31,11 +31,11 @@ public class FenetreCarteCommunaute {
 	private Label l_Description = new Label("?");
 	
 	/**
-	 * Unique constructeur de la classe {@link FenetreCarteCommunaute}, prenant en paramètre la {@link FenetrePrincipale} fp.
+	 * Unique constructeur de la classe {@link ViewCarteCommunaute}, prenant en paramètre la {@link FenetrePrincipale} fp.
 	 * @param fp FenetrePrincipale
 	 * @see FenetrePrincipale
 	 */
-	public FenetreCarteCommunaute(MainWindow fp) {
+	public ViewCarteCommunaute(MainWindow fp) {
 		
 		this.fp = fp;
 		

@@ -3,7 +3,7 @@ package cartes;
 import model.Carte;
 import model2.Boardmonop;
 import model2.Playermonop;
-import windows.MainWindow;
+import views.MainWindow;
 import io.Console;
 
 /**

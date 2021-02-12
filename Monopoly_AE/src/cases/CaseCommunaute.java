@@ -6,7 +6,7 @@ import model.Carte;
 import model.Case;
 import model2.Boardmonop;
 import model2.Playermonop;
-import windows.MainWindow;
+import views.MainWindow;
 
 
 /**

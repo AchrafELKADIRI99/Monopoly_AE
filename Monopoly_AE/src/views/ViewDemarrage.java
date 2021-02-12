@@ -1,4 +1,4 @@
-package windows;
+package views;
 
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -19,7 +19,7 @@ import javafx.stage.WindowEvent;
  * Fenêtre à afficher au démarrage d'une nouvelle {@link jeumonopoly.Partie}, permettant de sélectionner le nombre de joueur.
  * @see FenetrePrincipale
  */
-public class FenetreDemarrage {
+public class ViewDemarrage {
 
 	private MainWindow fp;
 	private Stage stage;
@@ -30,11 +30,11 @@ public class FenetreDemarrage {
 	private int choix = 0;
 	
 	/**
-	 * Unique constructeur de la classe {@link FenetreDemarrage}, prenant en paramètre la {@link FenetrePrincipale} fp.
+	 * Unique constructeur de la classe {@link ViewDemarrage}, prenant en paramètre la {@link FenetrePrincipale} fp.
 	 * @param fp FenetrePrincipale
 	 * @see FenetrePrincipale
 	 */
-	public FenetreDemarrage(MainWindow fp) {
+	public ViewDemarrage(MainWindow fp) {
 		
 		this.fp = fp;
 		

@@ -3,7 +3,7 @@ package cartes;
 import model.Carte;
 import model2.Boardmonop;
 import model2.Playermonop;
-import windows.MainWindow;
+import views.MainWindow;
 import io.Console;
 
 
@@ -42,20 +42,20 @@ public class CartePayerArgent extends Carte {
 		if(getNom().equals("Président du conseil d'administration")) {
 			for(int i=0; i<plateau.getNbJoueurs(); i++) {
 				if(plateau.getJoueur(i) != joueur && !plateau.getJoueur(i).getEstBanqueroute()) {
-					plateau.getJoueur(i).ajouterArgent(50);
-					joueur.retirerArgent(50);
+					plateau.getJoueur(i).ajouterArgent(7500);
+					joueur.retirerArgent(7500);
 				}
 			}
-			es.println(" > "+joueur.getNom()+" verse 50€ à chaque joueur.");
+			es.println(" > "+joueur.getNom()+" verse 7500DHs à chaque joueur.");
 			if(fp!=null)
-				fp.afficherMessage(joueur.getNom()+" verse 50€ à chaque joueur.");
+				fp.afficherMessage(joueur.getNom()+" verse 7500DHs à chaque joueur.");
 		}
 		else {
 			joueur.retirerArgent(montant);
 			plateau.getCase(20).setPrix(plateau.getCase(20).getPrix() + montant);
 			es.println(" > "+joueur.getNom()+" dépose "+montant+"€ au parc gratuit");
 			if(fp !=null)
-				fp.afficherMessage(joueur.getNom()+" dépose "+montant+"€ au parc gratuit");
+				fp.afficherMessage(joueur.getNom()+" dépose "+montant+"DHs au parc gratuit");
 		}
 	}
 	public int getMontant(){

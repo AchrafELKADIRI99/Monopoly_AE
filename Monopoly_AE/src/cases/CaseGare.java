@@ -5,7 +5,7 @@ import java.util.Random;
 import io.Console;
 import model2.Boardmonop;
 import model2.Playermonop;
-import windows.MainWindow;
+import views.MainWindow;
 import model.Case;
 
 /**
@@ -23,7 +23,7 @@ public class CaseGare extends Case {
 	 * @param nom String
 	 */
 	public CaseGare(String nom) {
-		super(nom, 200);
+		super(nom, 30000);
 	}
 
 	@Override
@@ -68,8 +68,8 @@ public class CaseGare extends Case {
 			joueur.retirerArgent(this.getPrix());
 			joueur.setNbGares(joueur.getNbGares() + 1);
 			
-			System.out.println(" > " + joueur.getNom() + " achète " + this.getNom() + " pour " + this.getPrix() + "€");
-			if(fp!=null) fp.afficherMessage(joueur.getNom() + " achète " + this.getNom() + " pour " + this.getPrix() + "€");
+			System.out.println(" > " + joueur.getNom() + " achète " + this.getNom() + " pour " + this.getPrix() + "DH");
+			if(fp!=null) fp.afficherMessage(joueur.getNom() + " achète " + this.getNom() + " pour " + this.getPrix() + "DH");
 			return true;
 		}
 	}
@@ -85,8 +85,8 @@ public class CaseGare extends Case {
 				this.getProprietaire().ajouterArgent(getLoyer());
 				beneficiaire = this.getProprietaire().getNom();
 			}
-			System.out.println(" > " + joueur.getNom() + " paye un loyer de " + getLoyer() + "€ à " + beneficiaire);
-			if(fp!=null) fp.afficherMessage(joueur.getNom() + " paye un loyer de " + getLoyer() + "€ à " + beneficiaire);
+			System.out.println(" > " + joueur.getNom() + " paye un loyer de " + getLoyer() + "DH à " + beneficiaire);
+			if(fp!=null) fp.afficherMessage(joueur.getNom() + " paye un loyer de " + getLoyer() + "DH à " + beneficiaire);
 		}
 		else {
 			System.out.println(" > Le propriétaire est en prison. " + joueur.getNom() + " ne paye pas de loyer.");
@@ -174,8 +174,8 @@ public class CaseGare extends Case {
 		Console es = new Console();
 		es.println("TEST DE LA CLASSE : CaseGare");
 
-		Playermonop j1 = new Playermonop("Yann", 0, 1000);
-		Playermonop j2 = new Playermonop("Benoit", 1, 1000);
+		Playermonop j1 = new Playermonop("Yann", 0, 150000);
+		Playermonop j2 = new Playermonop("Benoit", 1, 150000);
 		Boardmonop pm = new Boardmonop(2);
 		es.println(j1.toString());
 		es.println(j2.toString()+"\n");

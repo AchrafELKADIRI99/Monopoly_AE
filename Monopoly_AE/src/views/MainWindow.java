@@ -1,4 +1,4 @@
-package windows;
+package views;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -46,20 +46,20 @@ public class MainWindow {
 	private Button newPartie = new Button("Nouvelle partie");
 	public Random rand = new Random();
 	public Color[] Couleurs = new Color[] {Color.RED, Color.BLUE, Color.ORANGE, Color.GREEN};
-	private FenetreDemarrage fd = new FenetreDemarrage(this);
-	private FenetreCarteChance fch = new FenetreCarteChance(this);
-	private FenetreCarteCommunaute fco = new FenetreCarteCommunaute(this);
-	private FenetreAcheterTerrain fat = new FenetreAcheterTerrain(this);
-	private FenetreSortirPrison fprison = new FenetreSortirPrison(this);
-	private FenetreActionSurTerrain fact_ter = new FenetreActionSurTerrain(this);
+	private ViewDemarrage fd = new ViewDemarrage(this);
+	private ViewCarteChance fch = new ViewCarteChance(this);
+	private ViewCarteCommunaute fco = new ViewCarteCommunaute(this);
+	private ViewAcheterTerrain fat = new ViewAcheterTerrain(this);
+	private ViewSortirPrison fprison = new ViewSortirPrison(this);
+	private ViewActionSurTerrain fact_ter = new ViewActionSurTerrain(this);
 	private Party partie;
 
 	/**
 	 * Unique constructeur de la classe {@link MainWindow}, prenant en paramètre la Stage principale passée par le main. 
-	 * Le constructeur n'affiche pas la Stage au démarrage, mais une instance de {@link FenetreDemarrage} pour choisir un nombre de joueur avant l'affichage.
+	 * Le constructeur n'affiche pas la Stage au démarrage, mais une instance de {@link ViewDemarrage} pour choisir un nombre de joueur avant l'affichage.
 	 * @param primaryStage Stage
 	 * @see application.Main 
-	 * @see FenetreDemarrage
+	 * @see ViewDemarrage
 	 */
 	public MainWindow(Stage primaryStage) {
 		//Constructeur de la classe FenetrePrincipale
@@ -235,8 +235,8 @@ public class MainWindow {
 	}
 	
 	/**
-	 * Affiche la fenêtre {@link FenetreAcheterTerrain}.
-	 * @see FenetreAcheterTerrain
+	 * Affiche la fenêtre {@link ViewAcheterTerrain}.
+	 * @see ViewAcheterTerrain
 	 */
 	public void afficherFenetreAchatTerrain() {
 		
@@ -249,8 +249,8 @@ public class MainWindow {
 	}
 	
 	/**
-	 * Affiche la fenêtre {@link FenetreSortirPrison}.
-	 * @see FenetreSortirPrison
+	 * Affiche la fenêtre {@link ViewSortirPrison}.
+	 * @see ViewSortirPrison
 	 */
 	public void afficherFenetrePrison() {
 		
@@ -263,11 +263,11 @@ public class MainWindow {
 	}
 	
 	/**
-	 * Affiche la fenêtre {@link FenetreCarteChance}. <br>
+	 * Affiche la fenêtre {@link ViewCarteChance}. <br>
 	 * Les paramètres String titre et String description passés seront utilisés dans la fenêtre pour indiquer qu'elle carte on a tiré.
 	 * @param titre String
 	 * @param description String
-	 * @see FenetreCarteChance 
+	 * @see ViewCarteChance 
 	 */
 	public void afficherFenetreCarteChance(String titre, String description) {
 		
@@ -282,11 +282,11 @@ public class MainWindow {
 	}
 	
 	/**
-	 * Affiche la fenêtre {@link FenetreCarteCommunaute}. <br>
+	 * Affiche la fenêtre {@link ViewCarteCommunaute}. <br>
 	 * Les paramètres String titre et String description passés seront utilisés dans la fenêtre pour indiquer qu'elle carte on a tiré.
 	 * @param titre String
 	 * @param description String
-	 * @see FenetreCarteCommunaute
+	 * @see ViewCarteCommunaute
 	 */
 	public void afficherFenetreCarteCommunauté(String titre, String description) {
 		
@@ -555,7 +555,7 @@ public class MainWindow {
 	/**
 	 * Évènement lorque l'on appuie sur le bouton newPartie : la fenètre principale se ferme, les éléments graphiques sont
 	 * réinitialisés, la StackPane root est redéfinie et on réaffiche la fenêtre de démarrage.
-	 * @see FenetreDemarrage
+	 * @see ViewDemarrage
 	 */
 	private class EvtNewPartie implements EventHandler<ActionEvent> {
 		
@@ -574,9 +574,9 @@ public class MainWindow {
 	 * Évènement lorqu'on clic dans la StackPane root : 
 	 * en fonction des coordonnées du pointeurs, on peux obtenir la position de la case visée. <br>
 	 * Si cette position est une position valide (càd que l'on clic sur une {@link CaseTerrain} qui appartient au joueur dont
-	 * c'est le tour), alors on peut déclencher l'affichage d'une {@link FenetreAcheterTerrain} avec en paramètre la position cliquée.
+	 * c'est le tour), alors on peut déclencher l'affichage d'une {@link ViewAcheterTerrain} avec en paramètre la position cliquée.
 	 * @see CaseTerrain
-	 * @see FenetreAcheterTerrain
+	 * @see ViewAcheterTerrain
 	 */
 	private class EvtClicRoot implements EventHandler<MouseEvent> {
 		

@@ -1,4 +1,4 @@
-package windows;
+package views;
 
 import cases.CaseTerrain;
 import javafx.event.ActionEvent;
@@ -22,7 +22,7 @@ import javafx.stage.WindowEvent;
  * ** <b>Action réalisable : </b> Acheter le terrain
  * @see FenetrePrincipale
  */
-public class FenetreAcheterTerrain {
+public class ViewAcheterTerrain {
 	
 	private MainWindow fp;
 	private Stage stage;
@@ -32,11 +32,11 @@ public class FenetreAcheterTerrain {
 	private Button b_Non;
 	
 	/**
-	 * Unique constructeur de la classe {@link FenetreAcheterTerrain}, prenant en paramètre la {@link FenetrePrincipale} fp.
+	 * Unique constructeur de la classe {@link ViewAcheterTerrain}, prenant en paramètre la {@link FenetrePrincipale} fp.
 	 * @param fp FenetrePrincipale
 	 * @see FenetrePrincipale
 	 */
-	public FenetreAcheterTerrain(MainWindow fp) {
+	public ViewAcheterTerrain(MainWindow fp) {
 		
 		this.fp = fp;
 		

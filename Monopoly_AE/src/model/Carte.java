@@ -2,9 +2,7 @@ package model;
 
 import model2.Boardmonop;
 import model2.Playermonop;
-import windows.MainWindow;
-//import jeumonopoly.JoueurMonopoly;
-//import jeumonopoly.PlateauMonopoly;
+import views.MainWindow;
 
 public abstract class Carte {
 	private String titre;

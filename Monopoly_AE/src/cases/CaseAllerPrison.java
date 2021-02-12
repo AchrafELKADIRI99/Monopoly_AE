@@ -6,7 +6,7 @@ import model.Case;
 
 import model2.Boardmonop;
 import model2.Playermonop;
-import windows.MainWindow;
+import views.MainWindow;
 
 /**
  * Crée l'action pour aller en prison
@@ -57,7 +57,7 @@ public class CaseAllerPrison extends Case {
 	public static void main(String[] args){
 		
 		System.out.println("TEST DE LA CLASSE : CaseAllerPrison \n");
-		Playermonop j = new Playermonop("Yann", 0, 1000);
+		Playermonop j = new Playermonop("Yann", 0, 150000);
 		Boardmonop p = new Boardmonop(4);
 		
 		CaseAllerPrison c = (CaseAllerPrison) p.getCase(30);

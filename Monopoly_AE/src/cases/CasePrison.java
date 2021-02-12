@@ -5,7 +5,7 @@ import java.util.Random;
 import model.Case;
 import model2.Boardmonop;
 import model2.Playermonop;
-import windows.MainWindow;
+import views.MainWindow;
 import io.Console;
 
 /**
@@ -26,7 +26,7 @@ public class CasePrison extends Case {
 	/**
 	 * Méthode gérant tous les cas d'un joueur en prison : <br>
 	 * <ul>
-	 * <li>Si un joueur est resté 3 tours en prison, il doit payer 50€</li>
+	 * <li>Si un joueur est resté 3 tours en prison, il doit payer 7500DH</li>
 	 * <li>Si un joueur fait un double au lancé de dés, il peut sortir</li>
 	 * <li>Si un joueur possède une carte Sortie de Prison et qu'il l'utilise, il se libère</li>
 	 * </ul>
@@ -45,11 +45,11 @@ public class CasePrison extends Case {
 			
 			if(fp != null) fp.afficherDes(plateau);
 			
-			es.println("Voulez vous payer 50€ pour sortir de prison ? ");
+			es.println("Voulez vous payer 7500DH pour sortir de prison ? ");
 			
 			if(getReponseQuestion()){
-				es.println("OUI : " + joueur.getNom() + " décide de payer 50€ pour sortir de prison.");
-				joueur.retirerArgent(50);
+				es.println("OUI : " + joueur.getNom() + " décide de payer 7500DH pour sortir de prison.");
+				joueur.retirerArgent(7500);
 				reponseQuestion = false;
 				joueur.setEstPrison(false);
 				joueur.setToursEnPrison(1);
@@ -60,8 +60,8 @@ public class CasePrison extends Case {
 			}
 			else{
 				if(joueur.getToursEnPrison() > 2) {
-					es.println("NON : " + joueur.getNom() + " est a son 3e tour en prison, il sort et paye 50€.");
-					joueur.retirerArgent(50);
+					es.println("NON : " + joueur.getNom() + " est a son 3e tour en prison, il sort et paye 7500DH.");
+					joueur.retirerArgent(7500);
 					joueur.setEstPrison(false);
 					joueur.setToursEnPrison(1);
 					plateau.deplacerJoueur(joueur, lancé);
@@ -138,7 +138,7 @@ public class CasePrison extends Case {
 	public static void main(String[] args){
 		
 		System.out.println("TEST DE LA CLASSE : CasePrison \n");
-		Playermonop j = new Playermonop("Yann", 0, 1000);
+		Playermonop j = new Playermonop("Yann", 0, 150000);
 		Boardmonop p = new Boardmonop(4);
 		
 		CasePrison c = (CasePrison) p.getCase(10);

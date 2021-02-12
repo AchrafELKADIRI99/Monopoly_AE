@@ -1,4 +1,4 @@
-package windows;
+package views;
 
 import cases.CaseChance;
 import javafx.event.ActionEvent;
@@ -20,7 +20,7 @@ import javafx.stage.WindowEvent;
  * Fenêtre à afficher lorqu'on atterit sur une {@link CaseChance}.
  * @see FenetrePrincipale
  */
-public class FenetreCarteChance {
+public class ViewCarteChance {
 
 	private MainWindow fp;
 	private Stage stage;
@@ -31,11 +31,11 @@ public class FenetreCarteChance {
 	private Label l_Description = new Label("?");
 	
 	/**
-	 * Unique constructeur de la classe {@link FenetreCarteChance}, prenant en paramètre la {@link FenetrePrincipale} fp.
+	 * Unique constructeur de la classe {@link ViewCarteChance}, prenant en paramètre la {@link FenetrePrincipale} fp.
 	 * @param fp FenetrePrincipale
 	 * @see FenetrePrincipale
 	 */
-	public FenetreCarteChance(MainWindow fp) {
+	public ViewCarteChance(MainWindow fp) {
 		
 		this.fp = fp;
 		

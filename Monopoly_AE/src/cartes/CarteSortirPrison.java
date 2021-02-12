@@ -5,7 +5,7 @@ import io.Console;
 import model.Carte;
 import model2.Boardmonop;
 import model2.Playermonop;
-import windows.MainWindow;
+import views.MainWindow;
 
 /**
  * Type de {@link Carte} pour la sortie de prison. Cette carte est conservée par le joueur.

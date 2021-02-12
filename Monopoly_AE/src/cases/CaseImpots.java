@@ -5,7 +5,7 @@ import io.Console;
 import model.Case;
 import model2.Boardmonop;
 import model2.Playermonop;
-import windows.MainWindow;
+import views.MainWindow;
 
 /**
  * Crée l'action d'une case impôt
@@ -32,9 +32,9 @@ public class CaseImpots extends Case {
 		
 		Console es = new Console();
 		
-		es.println(" > " + joueur.getNom() + " dépose " + this.getPrix() + "€ au Parc Gratuit.");
+		es.println(" > " + joueur.getNom() + " dépose " + this.getPrix() + "DH au Parc Gratuit.");
 		if(fp != null)
-			fp.afficherMessage(joueur.getNom() + " dépose " + this.getPrix() + "€ au Parc Gratuit.");
+			fp.afficherMessage(joueur.getNom() + " dépose " + this.getPrix() + "DH au Parc Gratuit.");
 		
 		joueur.retirerArgent(this.getPrix());
 		
@@ -45,7 +45,7 @@ public class CaseImpots extends Case {
 	public static void main(String[] args){
 		
 		System.out.println("TEST DE LA CLASSE : CaseImpots");
-		Playermonop j = new Playermonop("Yann", 0, 1000);
+		Playermonop j = new Playermonop("Yann", 0, 150000);
 		Boardmonop p = new Boardmonop(4);
 		
 		CaseImpots c = (CaseImpots) p.getCase(4);

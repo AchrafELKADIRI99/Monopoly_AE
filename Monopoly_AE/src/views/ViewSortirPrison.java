@@ -1,4 +1,4 @@
-package windows;
+package views;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -20,7 +20,7 @@ import javafx.stage.WindowEvent;
  * Fenêtre à afficher lorqu'un joueur est en prison. Il a alors le choix : payer pour en sortir, ou rester et jouer sa libération aux dés.
  * @see FenetrePrincipale
  */
-public class FenetreSortirPrison {
+public class ViewSortirPrison {
 	
 	private MainWindow fp;
 	private Stage stage;
@@ -30,11 +30,11 @@ public class FenetreSortirPrison {
 	private Button b_Non;
 	
 	/**
-	 * Unique constructeur de la classe {@link FenetreSortirPrison}, prenant en paramètre la {@link FenetrePrincipale} fp.
+	 * Unique constructeur de la classe {@link ViewSortirPrison}, prenant en paramètre la {@link FenetrePrincipale} fp.
 	 * @param fp FenetrePrincipale
 	 * @see FenetrePrincipale
 	 */
-	public FenetreSortirPrison(MainWindow fp) {
+	public ViewSortirPrison(MainWindow fp) {
 		
 		this.fp = fp;
 		

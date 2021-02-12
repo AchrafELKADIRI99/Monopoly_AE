@@ -16,7 +16,7 @@ import javafx.scene.shape.Polygon;
 
 import model2.Boardmonop;
 import model2.Playermonop;
-import windows.MainWindow;
+import views.MainWindow;
 
 /**
  * Définit les cases du Monopoly

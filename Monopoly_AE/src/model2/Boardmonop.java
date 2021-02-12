@@ -86,38 +86,38 @@ public class Boardmonop extends Board {
 		setCase(33, new CaseCommunaute());
 		setCase(35, new CaseGare("Gare Saint-Lazare"));
 		setCase(36, new CaseChance());
-		setCase(38, new CaseImpots("Taxe de Luxe", 100));
+		setCase(38, new CaseImpots("Taxe de Luxe", 15000));
 		
 		/* INITIALISATION DES TERRAINS */
-		setCase(1, new CaseTerrain("Boulevard de Belleville", 60, new ArrayList<Integer>(Arrays.asList(2, 10, 30, 90, 160, 250)), 50, 0, "brun"));
-		setCase(3, new CaseTerrain("Rue Lecourbe", 60, new ArrayList<Integer>(Arrays.asList(4, 20, 60, 180, 320, 450)), 50, 0, "brun"));
+		setCase(1, new CaseTerrain("Boulevard de Belleville", 9000, new ArrayList<Integer>(Arrays.asList(300, 1500, 4500, 13500, 24000, 37500)), 75000, 0, "brun"));
+		setCase(3, new CaseTerrain("Rue Lecourbe", 9000, new ArrayList<Integer>(Arrays.asList(600, 3000, 9000, 27500, 48000, 67500)), 75000, 0, "brun"));
 		
-		setCase(6, new CaseTerrain("Rue de Vaugirard", 100, new ArrayList<Integer>(Arrays.asList(6, 30, 90, 270, 400, 550)), 50, 0, "turquoise"));
-		setCase(8, new CaseTerrain("Rue de Courcelles", 100, new ArrayList<Integer>(Arrays.asList(6, 30, 90, 270, 400, 550)), 50, 0, "turquoise"));
-		setCase(9, new CaseTerrain("Avenue de la République", 120, new ArrayList<Integer>(Arrays.asList(8, 40, 100, 300, 450, 600)), 50, 0, "turquoise"));
+		setCase(6, new CaseTerrain("Rue de Vaugirard", 15000, new ArrayList<Integer>(Arrays.asList(900, 4500, 13500, 40500, 60000, 82500)), 75000, 0, "turquoise"));
+		setCase(8, new CaseTerrain("Rue de Courcelles", 15000, new ArrayList<Integer>(Arrays.asList(900, 4500, 13500, 40500, 60000, 82500)), 75000, 0, "turquoise"));
+		setCase(9, new CaseTerrain("Avenue de la République", 18000, new ArrayList<Integer>(Arrays.asList(1200, 6000, 15000, 45000, 67500, 90000)), 75000, 0, "turquoise"));
 		
-		setCase(11, new CaseTerrain("Boulevard la Villette", 140, new ArrayList<Integer>(Arrays.asList(10, 50, 150, 450, 625, 750)), 100, 0, "mauve"));
-		setCase(13, new CaseTerrain("Avenue de Neuilly", 140, new ArrayList<Integer>(Arrays.asList(10, 50, 150, 450, 625, 750)), 100, 0, "mauve"));
-		setCase(14, new CaseTerrain("Rue du Paradis", 160, new ArrayList<Integer>(Arrays.asList(12, 60, 180, 500, 700, 900)), 100, 0, "mauve"));
+		setCase(11, new CaseTerrain("Boulevard la Villette", 21000, new ArrayList<Integer>(Arrays.asList(1500, 7500, 22500, 67500, 93750, 112500)), 15000, 0, "mauve"));
+		setCase(13, new CaseTerrain("Avenue de Neuilly", 21000, new ArrayList<Integer>(Arrays.asList(1500, 7500, 22500, 67500, 93750, 112500)), 15000, 0, "mauve"));
+		setCase(14, new CaseTerrain("Rue du Paradis", 24000, new ArrayList<Integer>(Arrays.asList(1800, 9000, 27000, 75000, 105000, 135000)), 15000, 0, "mauve"));
 		
-		setCase(16, new CaseTerrain("Avenue Mozart", 180, new ArrayList<Integer>(Arrays.asList(14, 70, 200, 550, 750, 950)), 100, 0, "orange"));
-		setCase(18, new CaseTerrain("Boulevard Saint-Victorien", 180, new ArrayList<Integer>(Arrays.asList(14, 70, 200, 550, 750, 950)), 100, 0, "orange"));
-		setCase(19, new CaseTerrain("Place Pigalle", 200, new ArrayList<Integer>(Arrays.asList(16, 80, 220, 600, 800, 1000)), 100, 0, "orange"));
+		setCase(16, new CaseTerrain("Avenue Mozart", 27000, new ArrayList<Integer>(Arrays.asList(2100, 10500, 3000, 82500, 112500, 142500)), 15000, 0, "orange"));
+		setCase(18, new CaseTerrain("Boulevard Saint-Victorien", 27000, new ArrayList<Integer>(Arrays.asList(2100, 10500, 30000, 82500, 112500, 142500)), 15000, 0, "orange"));
+		setCase(19, new CaseTerrain("Place Pigalle", 30000, new ArrayList<Integer>(Arrays.asList(2400, 12000, 33000, 90000, 120000, 150000)), 15000, 0, "orange"));
 		
-		setCase(21, new CaseTerrain("Avenue Matignon", 220, new ArrayList<Integer>(Arrays.asList(18, 90, 250, 700, 875, 1050)), 150, 0, "rouge"));
-		setCase(23, new CaseTerrain("Boulevard Malesherbes", 220, new ArrayList<Integer>(Arrays.asList(18, 90, 250, 700, 875, 1050)), 150, 0, "rouge"));
-		setCase(24, new CaseTerrain("Avenue Henri-Martin", 240, new ArrayList<Integer>(Arrays.asList(20, 100, 300, 750, 925, 1100)), 150, 0, "rouge"));
+		setCase(21, new CaseTerrain("Avenue Matignon", 33000, new ArrayList<Integer>(Arrays.asList(2700, 13500, 37500, 105000, 131250, 157500)), 22500, 0, "rouge"));
+		setCase(23, new CaseTerrain("Boulevard Malesherbes", 33000, new ArrayList<Integer>(Arrays.asList(2700, 13500, 37500, 105000, 131250, 157500)), 22500, 0, "rouge"));
+		setCase(24, new CaseTerrain("Avenue Henri-Martin", 36000, new ArrayList<Integer>(Arrays.asList(3000, 15000, 45000, 112500, 138750, 165000)), 22500, 0, "rouge"));
 		
-		setCase(26, new CaseTerrain("Faubourg Saint-Honoré", 260, new ArrayList<Integer>(Arrays.asList(22, 110, 330, 800, 975, 1150)), 150, 0, "jaune"));
-		setCase(27, new CaseTerrain("Place de la Bourse", 260, new ArrayList<Integer>(Arrays.asList(22, 110, 330, 800, 975, 1150)), 150, 0, "jaune"));
-		setCase(29, new CaseTerrain("Rue La Fayette", 280, new ArrayList<Integer>(Arrays.asList(24, 120, 360, 850, 1025, 1200)), 150, 0, "jaune"));
+		setCase(26, new CaseTerrain("Faubourg Saint-Honoré", 39000, new ArrayList<Integer>(Arrays.asList(3300, 16500, 49500, 120000, 146250, 172500)), 22500, 0, "jaune"));
+		setCase(27, new CaseTerrain("Place de la Bourse", 39000, new ArrayList<Integer>(Arrays.asList(3300, 16500, 49500, 120000, 146250, 172500)), 22500, 0, "jaune"));
+		setCase(29, new CaseTerrain("Rue La Fayette", 42000, new ArrayList<Integer>(Arrays.asList(3600, 18000, 54000, 127500, 153750, 180000)), 22500, 0, "jaune"));
 		
-		setCase(31, new CaseTerrain("Avenue de Breuteuil", 300, new ArrayList<Integer>(Arrays.asList(26, 130, 390, 900, 1100, 1275)), 200, 0, "vert"));
-		setCase(32, new CaseTerrain("Avenue Foch", 300, new ArrayList<Integer>(Arrays.asList(26, 130, 390, 900, 1100, 1275)), 200, 0, "vert"));
-		setCase(34, new CaseTerrain("Boulevard des Capucines", 320, new ArrayList<Integer>(Arrays.asList(28, 150, 450, 1000, 1200, 1400)), 200, 0, "vert"));
+		setCase(31, new CaseTerrain("Avenue de Breuteuil", 45000, new ArrayList<Integer>(Arrays.asList(3900, 19500, 58500, 135000, 165000, 191250)), 30000, 0, "vert"));
+		setCase(32, new CaseTerrain("Avenue Foch", 45000, new ArrayList<Integer>(Arrays.asList(3900, 19500, 58500, 135000, 165000, 191250)), 30000, 0, "vert"));
+		setCase(34, new CaseTerrain("Boulevard des Capucines", 48000, new ArrayList<Integer>(Arrays.asList(4200, 22500, 67500, 150000, 180000, 210000)), 30000, 0, "vert"));
 		
-		setCase(37, new CaseTerrain("Avenue des Champs-Élysées", 350, new ArrayList<Integer>(Arrays.asList(35, 175, 500, 1100, 1300, 1500)), 200, 0, "bleu"));
-		setCase(39, new CaseTerrain("Rue de la Paix", 400, new ArrayList<Integer>(Arrays.asList(50, 200, 600, 1400, 1700, 2000)), 200, 0, "bleu"));
+		setCase(37, new CaseTerrain("Avenue des Champs-Élysées", 52500, new ArrayList<Integer>(Arrays.asList(5250, 26250, 75000, 165000, 195000, 225000)), 30000, 0, "bleu"));
+		setCase(39, new CaseTerrain("Rue de la Paix", 60000, new ArrayList<Integer>(Arrays.asList(7500, 30000, 90000, 210000, 255000, 300000)), 30000, 0, "bleu"));
 		
 		
 		/* INITIALISATION DES CARTES CHANCES */

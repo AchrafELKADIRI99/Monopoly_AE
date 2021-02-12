@@ -5,7 +5,7 @@ import io.Console;
 import model.Case;
 import model2.Boardmonop;
 import model2.Playermonop;
-import windows.MainWindow;
+import views.MainWindow;
 
 /**
  * Crée l'action de la case Parc Gratuit
@@ -29,9 +29,9 @@ public class CaseParcGratuit extends Case {
 		
 		Console es = new Console();
 		
-		es.println(" > " + joueur.getNom() + " ramasse " + this.getPrix() + "€ du Parc Gratuit !");
+		es.println(" > " + joueur.getNom() + " ramasse " + this.getPrix() + "DH du Parc Gratuit !");
 		if(fp!=null) 
-			fp.afficherMessage(joueur.getNom() + " ramasse " + this.getPrix() + "€ du Parc Gratuit !");
+			fp.afficherMessage(joueur.getNom() + " ramasse " + this.getPrix() + "DH du Parc Gratuit !");
 		joueur.ajouterArgent(this.getPrix());
 		this.setPrix(0);
 	}
@@ -39,13 +39,13 @@ public class CaseParcGratuit extends Case {
 	public static void main(String[] args){
 		
 		System.out.println("TEST DE LA CLASSE : CaseParcGratuit");
-		Playermonop j = new Playermonop("Yann", 0, 1000);
+		Playermonop j = new Playermonop("Yann", 0, 150000);
 		Boardmonop p = new Boardmonop(4);
 		
 		CaseParcGratuit c = (CaseParcGratuit) p.getCase(20);
 		
-		c.setPrix(300);
-		System.out.println("Initialisation de la case Parc Gratuit à 300€ : "+ c.toString());
+		c.setPrix(45000);
+		System.out.println("Initialisation de la case Parc Gratuit à 45000DH : "+ c.toString());
 		System.out.println("Joueur avant le parc gratuit : "+ j.toString());
 		j.setPosition(20);
 		c.actionCase(j, p, null);
