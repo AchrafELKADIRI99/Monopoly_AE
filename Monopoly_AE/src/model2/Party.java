@@ -1,11 +1,15 @@
 package model2;
 
 
+import java.util.ArrayList;
+
+
 import io.Console;
 import model.Case;
 import views.MainWindow;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
+
 
 /**
  * Lance la partie
@@ -35,11 +39,14 @@ public class Party {
 	 * @param nombreDeJoueurs
 	 * @param fp
 	 */
-	public Party(int nombreDeJoueurs, MainWindow fp) {
+	public Party(int nombreDeJoueurs, ArrayList<String> nomsDesJoueurs, MainWindow fp) {
 		this.pm = new Boardmonop(nombreDeJoueurs);
 		this.fp = fp;
+
+		for(int i=0; i<nombreDeJoueurs; i++) {
+			pm.getJoueur(i).setNom(nomsDesJoueurs.get(i));
+		}
 	}
-	
 	/**
 	 * Démarre la partie
 	 * @see JoueurMonopoly

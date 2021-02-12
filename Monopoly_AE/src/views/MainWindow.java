@@ -21,6 +21,7 @@ import javafx.scene.shape.Polygon;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+
 import model.Case;
 import model2.Boardmonop;
 import model2.Party;
@@ -157,29 +158,29 @@ public class MainWindow {
 	 * la liste de leurs terrains et les pions.
 	 * @param nbJoueurs int
 	 */
-	public void setPartie(int nbJoueurs) {
-		
-		partie = new Party(nbJoueurs, this);
-		
+	public void setPartie(int nbJoueurs, ArrayList<String> nomsDesJoueurs) {
+
+		partie = new Party(nbJoueurs, nomsDesJoueurs, this);
+
 		for(int i=0; i<nbJoueurs; i++) {
 			Label l_nomJoueur = new Label(partie.getPM().getJoueur(i).getNom());
 			l_nomJoueur.setTextFill(Couleurs[i]);
 			l_nomJoueur.setTranslateX(95+i*120);
 			l_nomJoueur.setTranslateY(100);
 			root.getChildren().add(l_nomJoueur);
-			
-			l_Joueurs.add(new Label(""+partie.getPM().getJoueur(i).getArgent()+"DH"));
+
+			l_Joueurs.add(new Label(""+partie.getPM().getJoueur(i).getArgent()+"€"));
 			l_Joueurs.get(i).setTranslateX(95+i*120);
 			l_Joueurs.get(i).setTranslateY(120);
 			l_Joueurs.get(i).setFont(Font.font("Arial", 15));
 			root.getChildren().add(l_Joueurs.get(i));
-			
+
 			l_ListeTerrains.add(new Label("\n"));
 			l_ListeTerrains.get(i).setTranslateX(95+i*120);
 			l_ListeTerrains.get(i).setTranslateY(140);
 			l_ListeTerrains.get(i).setMaxWidth(110);
 			root.getChildren().add(l_ListeTerrains.get(i));
-			
+
 			l_Pions.add(new Circle(7));
 			l_Pions.get(i).setFill(Couleurs[i]);
 			if(i<2) {
@@ -192,7 +193,7 @@ public class MainWindow {
 			}
 			root.getChildren().add(l_Pions.get(i));
 		}
-		
+
 		refreshLabels(partie.getPM());
 		partie.demarrerLaPartie();
 	}
