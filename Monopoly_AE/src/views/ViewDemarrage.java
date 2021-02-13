@@ -107,8 +107,8 @@ public class ViewDemarrage  {
 
 
 		VBox vBox1 =new VBox();
-		//vBox1.setPrefHeight(884.0);
-		//vBox1.setPrefWidth(495.);
+		vBox1.setPrefHeight(884.0);
+		vBox1.setPrefWidth(495.);
 		vBox1.setStyle("-fx-background-color:linear-gradient(to right top,#3A1C71,#FDBB2D)");
 		vBox1.setBlendMode(BlendMode.SRC_OVER);
 		vBox1.setDepthTest(DepthTest.INHERIT);
@@ -121,7 +121,7 @@ public class ViewDemarrage  {
 		imageView1.setFitWidth(400.0);
 		imageView1.setPickOnBounds(true);
 		imageView1.setPreserveRatio(true);
-
+		
 		imageView1.setImage(new Image("/images/monopmarrakech.png"));
 
 		VBox.setMargin((imageView1), new Insets(10,0,0,170));
