@@ -11,6 +11,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.NodeOrientation;
+import javafx.geometry.Pos;
 import javafx.scene.DepthTest;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -38,12 +39,14 @@ import javafx.stage.WindowEvent;
  */
 public class ViewDemarrage  {
 
+	AudioClip media2 = new AudioClip(new File ("c:\\sound.mp3").toURI().toString());
 	private MainWindow fp;
 	private Stage stage;
 	private VBox root;
 	private Label l_NbJoueurs;
 	private ArrayList<TextField> listeJoueurs = new ArrayList<TextField>();
 	private Button b_Valider;
+	private Button b_Mute;
 	private int choix = 0;
 	private  Button btn;
 
@@ -81,7 +84,7 @@ public class ViewDemarrage  {
 		root = new VBox();
 
 		initRoot();
-	    Scene scene = new Scene(root, 884.0,495.0/*400,190*/);
+	    Scene scene = new Scene(root/*, 884.0,495.0/*400,190*/);
 
 
 		stage.setScene(scene);
@@ -98,14 +101,15 @@ public class ViewDemarrage  {
 		root.setSpacing(5);
        // root.resize(884, 495);
 
-		l_NbJoueurs = new Label("Noms des joueurs (2 minimum) :");
+		l_NbJoueurs = new Label("SAISIR LES NOMS DES JOUEURS (Au moins 2 joueurs) :");
+		l_NbJoueurs.setStyle("-fx-font-family: 'Century Gothic'");
 		
 
 
 		VBox vBox1 =new VBox();
-		vBox1.setPrefHeight(884.0);
-		vBox1.setPrefWidth(495.);
-		vBox1.setStyle("-fx-background-color: #005395");
+		//vBox1.setPrefHeight(884.0);
+		//vBox1.setPrefWidth(495.);
+		vBox1.setStyle("-fx-background-color:linear-gradient(to right top,#3A1C71,#FDBB2D)");
 		vBox1.setBlendMode(BlendMode.SRC_OVER);
 		vBox1.setDepthTest(DepthTest.INHERIT);
 		vBox1.setNodeOrientation(NodeOrientation.LEFT_TO_RIGHT);
@@ -113,8 +117,8 @@ public class ViewDemarrage  {
 		
 
 		ImageView imageView1=new ImageView();
-		imageView1.setFitHeight(500.0);
-		imageView1.setFitWidth(500.0);
+		imageView1.setFitHeight(400.0);
+		imageView1.setFitWidth(400.0);
 		imageView1.setPickOnBounds(true);
 		imageView1.setPreserveRatio(true);
 
@@ -138,18 +142,31 @@ public class ViewDemarrage  {
 		for(int i=0; i<4; i++) {
 			listeJoueurs.add(new TextField(i<2?"Joueur"+(i+1):""));
 			listeJoueurs.get(i).setPromptText("Nom du joueur "+(i+1));
+			listeJoueurs.get(i).setStyle("-fx-background-radius: 30px;-fx-font-family:'Century Gothic'");
 			root.getChildren().add(listeJoueurs.get(i));
 		}
-		b_Valider = new Button("Valider");
+		b_Valider = new Button("PLAY");
+		b_Valider.setTranslateX(260);
+		b_Valider.setTranslateY(6);
+		b_Valider.setStyle("-fx-background-radius: 30px;-fx-font-family:'Century Gothic'");
 		b_Valider.setOnAction(new EvtValider());
 		b_Valider.setDefaultButton(true);
 		b_Valider.setOnAction(new EvtValider());
 
 		root.getChildren().add(b_Valider);
 
+		
+		b_Mute = new Button("MUTE");
+		b_Mute.setTranslateX(500);
+		b_Mute.setTranslateY(-21);
+		b_Mute.setStyle("-fx-background-radius: 30px;-fx-font-family:'Century Gothic'");
+		b_Mute.setOnAction(new EvtValider());
+		b_Mute.setDefaultButton(true);
+		b_Mute.setOnAction(new EvtValider());
 
+		root.getChildren().add(b_Mute);
 
-		VBox vBox2 =new VBox();
+		/*VBox vBox2 =new VBox();
 		vBox2.setPrefHeight(884.0);
 		vBox2.setPrefWidth(495.);
 		vBox2.setStyle("-fx-background-color: #005395");
@@ -165,12 +182,13 @@ public class ViewDemarrage  {
 		imageView2.setPickOnBounds(true);
 		imageView2.setPreserveRatio(true);
 
-		imageView2.setImage(new Image("/images/upm.png"));
+		
 
 		VBox.setMargin((imageView2), new Insets(10,0,0,270));
 
 		vBox2.getChildren().add(imageView2);
 
+<<<<<<< HEAD
 		root.getChildren().add(vBox2);
 		
 		
@@ -178,6 +196,8 @@ public class ViewDemarrage  {
 		
 		
 		
+=======
+		root.getChildren().add(vBox2);*/
 	}
 
 
@@ -220,13 +240,25 @@ public class ViewDemarrage  {
 			event.consume();
 		}
 	}
+
 	private void play_audio() {
 	
 		 
 	       
-		AudioClip media2 = new AudioClip(new File ("c:\\sound.mp3").toURI().toString());
+		
 		 media2.play();
+		 
+		 
 		 
 	}
 	
+
+	private class EvtMute implements EventHandler<ActionEvent> {
+
+		@Override
+		public void handle(ActionEvent event) {
+			// TODO Auto-generated method stub
+			media2.setVolume(0.0);
+		}
+	}
 }
