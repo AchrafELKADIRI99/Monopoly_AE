@@ -47,7 +47,7 @@ public class ViewDemarrage  {
 	private ArrayList<TextField> listeJoueurs = new ArrayList<TextField>();
 	private Button b_Valider;
 	private Button b_Mute;
-	private Button b_UNMute;
+	
 	private int choix = 0;
 	private  Button btn;
 
@@ -174,9 +174,11 @@ public class ViewDemarrage  {
 		b_Valider.setOnAction(new EvtValider());
 
 		root.getChildren().add(b_Valider);
-
 		
-		b_Mute = new Button("MUTE");
+		
+		
+		
+		b_Mute = new Button("MUTE ");
 		b_Mute.setTranslateX(360);
 		b_Mute.setTranslateY(-21);
 		b_Mute.setStyle("-fx-background-radius: 30px;-fx-font-family:'Century Gothic';-fx-background-color: #1da64a");
@@ -186,15 +188,8 @@ public class ViewDemarrage  {
 
 		root.getChildren().add(b_Mute);
 		
-		b_UNMute = new Button("UNMUTE");
-		b_UNMute.setTranslateX(360);
-		b_UNMute.setTranslateY(-21);
-		b_UNMute.setStyle("-fx-background-radius: 30px;-fx-font-family:'Century Gothic';-fx-background-color: #1da64a");
-		b_UNMute.setOnAction(new EvtUNMute());
-		b_UNMute.setDefaultButton(true);
-		b_UNMute.setOnAction(new EvtUNMute());
 
-		root.getChildren().add(b_UNMute);
+		
 
 		/*VBox vBox2 =new VBox();
 		vBox2.setPrefHeight(884.0);
@@ -289,17 +284,17 @@ public class ViewDemarrage  {
 		public void handle(ActionEvent event) {
 			// TODO Auto-generated method stub
 			
-			media2.stop();
+			if (media2.isPlaying()) {	
+				media2.stop();
+				b_Mute.setText("UNMUTE");
+				}
+		
+			else {
+				play_audio();
+				b_Mute.setText("MUTE");
+			}
 		}
 	}
 
-	private class EvtUNMute implements EventHandler<ActionEvent> {
-
-		@Override
-		public void handle(ActionEvent event) {
-			// TODO Auto-generated method stub
-			play_audio();
-			//ez
-		}
-	}
+	
 }
