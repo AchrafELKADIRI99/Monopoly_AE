@@ -115,8 +115,8 @@ public class ViewDemarrage  {
 
 		VBox vBox1 =new VBox();
 
-		vBox1.setPrefHeight(884.0);
-		vBox1.setPrefWidth(495.);
+		vBox1.setPrefHeight(200.0);
+		vBox1.setPrefWidth(200.);
 		vBox1.setStyle("-fx-background-color:linear-gradient(to right top,#3A1C71,#FDBB2D)");
 
 		//vBox1.setPrefHeight(884.0);
@@ -137,7 +137,7 @@ public class ViewDemarrage  {
 		
 		imageView1.setImage(new Image("/images/monopmarrakech.png"));
 
-		VBox.setMargin((imageView1), new Insets(10,0,0,170));
+		VBox.setMargin((imageView1), new Insets(10,10,10,10));
 
 		vBox1.getChildren().add(imageView1);
 
@@ -154,14 +154,21 @@ public class ViewDemarrage  {
 		root.getChildren().add(l_NbJoueurs);
 		for(int i=0; i<4; i++) {
 			listeJoueurs.add(new TextField());
-			listeJoueurs.get(i).setPromptText("Player N° "+(i+1));
+			listeJoueurs.get(i).setPromptText("Player N° "+(i+1));			
 			listeJoueurs.get(i).setStyle("-fx-background-radius: 30px;-fx-font-family:'Century Gothic'");
+
 			root.getChildren().add(listeJoueurs.get(i));
 		}
+		for(int i=0; i<2; i++) {
+
+			listeJoueurs.get(i).setText("Player N° "+(i+1));
+		
+		}
+		
 		b_Valider = new Button("PLAY");
-		b_Valider.setTranslateX(260);
+		b_Valider.setTranslateX(180);
 		b_Valider.setTranslateY(6);
-		b_Valider.setStyle("-fx-background-radius: 30px;-fx-font-family:'Century Gothic'");
+		b_Valider.setStyle("-fx-background-radius: 30px;-fx-font-family:'Century Gothic';-fx-background-color: #c9f9b6");
 		b_Valider.setOnAction(new EvtValider());
 		b_Valider.setDefaultButton(true);
 		b_Valider.setOnAction(new EvtValider());
@@ -170,9 +177,9 @@ public class ViewDemarrage  {
 
 		
 		b_Mute = new Button("MUTE");
-		b_Mute.setTranslateX(500);
+		b_Mute.setTranslateX(360);
 		b_Mute.setTranslateY(-21);
-		b_Mute.setStyle("-fx-background-radius: 30px;-fx-font-family:'Century Gothic'");
+		b_Mute.setStyle("-fx-background-radius: 30px;-fx-font-family:'Century Gothic';-fx-background-color: #c9f9b6");
 		b_Mute.setOnAction(new EvtMute());
 		b_Mute.setDefaultButton(true);
 		b_Mute.setOnAction(new EvtMute());
@@ -180,9 +187,9 @@ public class ViewDemarrage  {
 		root.getChildren().add(b_Mute);
 		
 		b_UNMute = new Button("UNMUTE");
-		b_UNMute.setTranslateX(500);
+		b_UNMute.setTranslateX(360);
 		b_UNMute.setTranslateY(-21);
-		b_UNMute.setStyle("-fx-background-radius: 30px;-fx-font-family:'Century Gothic'");
+		b_UNMute.setStyle("-fx-background-radius: 30px;-fx-font-family:'Century Gothic';-fx-background-color: #c9f9b6");
 		b_UNMute.setOnAction(new EvtUNMute());
 		b_UNMute.setDefaultButton(true);
 		b_UNMute.setOnAction(new EvtUNMute());
