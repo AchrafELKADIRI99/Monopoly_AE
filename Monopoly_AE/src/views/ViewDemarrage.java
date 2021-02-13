@@ -131,8 +131,8 @@ public class ViewDemarrage {
 
 		root.getChildren().add(l_NbJoueurs);
 		for(int i=0; i<4; i++) {
-			listeJoueurs.add(new TextField(i<2?"Joueur"+(i+1):""));
-			listeJoueurs.get(i).setPromptText("Nom du joueur "+(i+1));
+			listeJoueurs.add(new TextField());
+			listeJoueurs.get(i).setPromptText("Player N° "+(i+1));
 			listeJoueurs.get(i).setStyle("-fx-background-radius: 30px;-fx-font-family:'Century Gothic'");
 			root.getChildren().add(listeJoueurs.get(i));
 		}
