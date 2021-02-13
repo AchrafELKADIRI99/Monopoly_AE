@@ -47,6 +47,7 @@ public class ViewDemarrage  {
 	private ArrayList<TextField> listeJoueurs = new ArrayList<TextField>();
 	private Button b_Valider;
 	private Button b_Mute;
+	private Button b_UNMute;
 	private int choix = 0;
 	private  Button btn;
 
@@ -171,6 +172,16 @@ public class ViewDemarrage  {
 		b_Mute.setOnAction(new EvtMute());
 
 		root.getChildren().add(b_Mute);
+		
+		b_UNMute = new Button("UNMUTE");
+		b_UNMute.setTranslateX(500);
+		b_UNMute.setTranslateY(-21);
+		b_UNMute.setStyle("-fx-background-radius: 30px;-fx-font-family:'Century Gothic'");
+		b_UNMute.setOnAction(new EvtUNMute());
+		b_UNMute.setDefaultButton(true);
+		b_UNMute.setOnAction(new EvtUNMute());
+
+		root.getChildren().add(b_UNMute);
 
 		/*VBox vBox2 =new VBox();
 		vBox2.setPrefHeight(884.0);
@@ -265,6 +276,15 @@ public class ViewDemarrage  {
 		public void handle(ActionEvent event) {
 			// TODO Auto-generated method stub
 			media2.stop();
+		}
+	}
+
+	private class EvtUNMute implements EventHandler<ActionEvent> {
+
+		@Override
+		public void handle(ActionEvent event) {
+			// TODO Auto-generated method stub
+			play_audio();
 		}
 	}
 }
