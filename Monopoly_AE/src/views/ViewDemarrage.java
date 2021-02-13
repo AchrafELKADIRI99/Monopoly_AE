@@ -99,7 +99,7 @@ public class ViewDemarrage  {
 		stage.setOnHiding(new EvtQuitter());
 		play_audio();
 	}
-
+//ezez
 	/**
 	 * Initialise la VBox root de la FenetreDemarrage avec une {@link ListView} de nombres de joueurs et un bouton de validation.
 	 */
