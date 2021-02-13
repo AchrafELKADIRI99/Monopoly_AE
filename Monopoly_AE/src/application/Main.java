@@ -10,7 +10,8 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		
 		try {
-			new MainWindow(primaryStage);
+			MainWindow wind = MainWindow.getInstance();
+			wind.chargeMainWindow(primaryStage);
 		} 
 		catch(Exception e) {
 			e.printStackTrace();

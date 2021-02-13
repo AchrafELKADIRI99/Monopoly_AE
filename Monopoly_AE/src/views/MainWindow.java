@@ -54,7 +54,34 @@ public class MainWindow {
 	private ViewSortirPrison fprison = new ViewSortirPrison(this);
 	private ViewActionSurTerrain fact_ter = new ViewActionSurTerrain(this);
 	private Party partie;
+	
+	
+	private static MainWindow instance = new MainWindow();
+	
+	//private constructor
+	private MainWindow() {}
+	
+	
+	//retur instance
+public static MainWindow getInstance() {
+	return instance;
+}
 
+public  void chargeMainWindow(Stage primaryStage) {
+	//Constructeur de la classe FenetrePrincipale
+	
+	this.stage = primaryStage;
+	
+	root = new StackPane();
+	root.setOnMouseClicked(new EvtClicRoot());
+	initRoot();
+	
+	Scene scene = new Scene(root,655,655);
+	stage.setScene(scene);
+	stage.setTitle("Monopoly");
+	
+	fd.getStage().show();
+}
 	/**
 	 * Unique constructeur de la classe {@link MainWindow}, prenant en paramètre la Stage principale passée par le main. 
 	 * Le constructeur n'affiche pas la Stage au démarrage, mais une instance de {@link ViewDemarrage} pour choisir un nombre de joueur avant l'affichage.
@@ -62,7 +89,7 @@ public class MainWindow {
 	 * @see application.Main 
 	 * @see ViewDemarrage
 	 */
-	public MainWindow(Stage primaryStage) {
+/*	public MainWindow(Stage primaryStage) {
 		//Constructeur de la classe FenetrePrincipale
 		
 		this.stage = primaryStage;
@@ -76,7 +103,7 @@ public class MainWindow {
 		stage.setTitle("Monopoly");
 		
 		fd.getStage().show();
-	}
+	}*/
 	
 	/**
 	 * Initialise la StackPane root de la FenetrePrincipale avec les images, les labels et les boutons adéquates au Monopoly.

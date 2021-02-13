@@ -64,7 +64,13 @@ public class ViewDemarrage  {
 	 * Unique constructeur de la classe {@link FenetreDemarrage}, prenant en paramètre la {@link FenetrePrincipale} fp.
 	 * @param fp FenetrePrincipale
 	 * @see FenetrePrincipale
+	
 	 */
+    
+    
+    
+    
+    
 	public ViewDemarrage(MainWindow fp) {
 		
 		
