@@ -160,9 +160,9 @@ public class ViewDemarrage  {
 		b_Mute.setTranslateX(500);
 		b_Mute.setTranslateY(-21);
 		b_Mute.setStyle("-fx-background-radius: 30px;-fx-font-family:'Century Gothic'");
-		b_Mute.setOnAction(new EvtValider());
+		b_Mute.setOnAction(new EvtMute());
 		b_Mute.setDefaultButton(true);
-		b_Mute.setOnAction(new EvtValider());
+		b_Mute.setOnAction(new EvtMute());
 
 		root.getChildren().add(b_Mute);
 
