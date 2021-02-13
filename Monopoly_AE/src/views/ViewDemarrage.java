@@ -109,7 +109,7 @@ public class ViewDemarrage  {
 		VBox vBox1 =new VBox();
 		//vBox1.setPrefHeight(884.0);
 		//vBox1.setPrefWidth(495.);
-		vBox1.setStyle("-fx-background-color:linear-gradient(to right top,#3A1C71,#FDBB2D)");
+		vBox1.setStyle("-fx-background-color:linear-gradient(to right top,#c9f9b6,#1da64a)");
 		vBox1.setBlendMode(BlendMode.SRC_OVER);
 		vBox1.setDepthTest(DepthTest.INHERIT);
 		vBox1.setNodeOrientation(NodeOrientation.LEFT_TO_RIGHT);
@@ -259,6 +259,7 @@ public class ViewDemarrage  {
 		public void handle(ActionEvent event) {
 			// TODO Auto-generated method stub
 			media2.setVolume(0.0);
+			media2.setBalance(0.0);
 		}
 	}
 }
