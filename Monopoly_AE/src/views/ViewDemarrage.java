@@ -168,7 +168,7 @@ public class ViewDemarrage  {
 		b_Valider = new Button("PLAY");
 		b_Valider.setTranslateX(180);
 		b_Valider.setTranslateY(6);
-		b_Valider.setStyle("-fx-background-radius: 30px;-fx-font-family:'Century Gothic';-fx-background-color: #c9f9b6");
+		b_Valider.setStyle("-fx-background-radius: 30px;-fx-font-family:'Century Gothic';-fx-background-color: #1da64a");
 		b_Valider.setOnAction(new EvtValider());
 		b_Valider.setDefaultButton(true);
 		b_Valider.setOnAction(new EvtValider());
@@ -179,7 +179,7 @@ public class ViewDemarrage  {
 		b_Mute = new Button("MUTE");
 		b_Mute.setTranslateX(360);
 		b_Mute.setTranslateY(-21);
-		b_Mute.setStyle("-fx-background-radius: 30px;-fx-font-family:'Century Gothic';-fx-background-color: #c9f9b6");
+		b_Mute.setStyle("-fx-background-radius: 30px;-fx-font-family:'Century Gothic';-fx-background-color: #1da64a");
 		b_Mute.setOnAction(new EvtMute());
 		b_Mute.setDefaultButton(true);
 		b_Mute.setOnAction(new EvtMute());
@@ -189,7 +189,7 @@ public class ViewDemarrage  {
 		b_UNMute = new Button("UNMUTE");
 		b_UNMute.setTranslateX(360);
 		b_UNMute.setTranslateY(-21);
-		b_UNMute.setStyle("-fx-background-radius: 30px;-fx-font-family:'Century Gothic';-fx-background-color: #c9f9b6");
+		b_UNMute.setStyle("-fx-background-radius: 30px;-fx-font-family:'Century Gothic';-fx-background-color: #1da64a");
 		b_UNMute.setOnAction(new EvtUNMute());
 		b_UNMute.setDefaultButton(true);
 		b_UNMute.setOnAction(new EvtUNMute());
