@@ -301,4 +301,6 @@ public class Boardmonop extends Board {
 		return "PlateauMonopoly [toString()=" + super.getCase(1) + "]";
 	}
 	
+	
+	
 }

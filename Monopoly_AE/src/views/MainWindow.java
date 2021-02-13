@@ -1,5 +1,6 @@
 package views;
 
+
 import java.util.ArrayList;
 import java.util.Random;
 import cases.CaseTerrain;
@@ -15,6 +16,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
+
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Polygon;
@@ -33,6 +35,7 @@ import model2.Playermonop;
  */
 public class MainWindow {
 	
+	private Button b_Mute;
 	private Stage stage;
 	private StackPane root;
 	private Label l_ParcGratuit = new Label("0DH");
@@ -110,6 +113,7 @@ public  void chargeMainWindow(Stage primaryStage) {
 	 */
 	@SuppressWarnings("static-access")
 	private void initRoot() {
+		Music.musicstat();
 		root.setStyle("-fx-background-image: url('images/plateau.png'); -fx-background-repeat: no-repeat");
 		root.setAlignment(Pos.TOP_LEFT);
 		
@@ -142,6 +146,23 @@ public  void chargeMainWindow(Stage primaryStage) {
 		tourSuivant.setMaxHeight(30);
 		tourSuivant.setOnAction(new EvtTourSuivant());
 		tourSuivant.setDefaultButton(true);
+		
+		
+			b_Mute = new Button("MUSIQUE");
+		
+	
+		
+		b_Mute.setTranslateX(100);
+		b_Mute.setTranslateY(533);
+		b_Mute.setStyle("-fx-background-radius: 30px;-fx-font-family:'Century Gothic';-fx-background-color: #1da64a;-fx-text-fill :#ffff");
+		b_Mute.setOnAction(new EvtMute());
+		b_Mute.setDefaultButton(true);
+		b_Mute.setOnAction(new EvtMute());
+
+		root.getChildren().add(b_Mute);
+		
+		
+		
 		if(!partie.PARTIE_AUTO)
 			root.getChildren().add(tourSuivant);
 	}
@@ -651,6 +672,28 @@ public  void chargeMainWindow(Stage primaryStage) {
 			if(!CasesInterdites.contains(pos)) {
 				fact_ter.afficherFenetre(pos);
 			}
+		}
+	}
+	
+	
+	private class EvtMute implements EventHandler<ActionEvent> {
+
+		@Override
+		public void handle(ActionEvent event) {
+			// TODO Auto-generated method stub
+			
+			if (Music.musicstat()==true) {	
+				Music.stopmusic();
+				b_Mute.setText("UNMUTE");
+				
+				}
+		
+			else {
+				Music.playmusic();
+				b_Mute.setText("MUTE");
+				
+			}
+			
 		}
 	}
 	

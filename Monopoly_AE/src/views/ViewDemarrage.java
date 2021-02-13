@@ -1,17 +1,13 @@
 package views;
 
-import java.io.File;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.ResourceBundle;
 
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.fxml.Initializable;
+
 import javafx.geometry.Insets;
 import javafx.geometry.NodeOrientation;
-import javafx.geometry.Pos;
+
 import javafx.scene.DepthTest;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -21,14 +17,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.effect.BlendMode;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
+
 import javafx.scene.layout.VBox;
-import javafx.scene.media.AudioClip;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
+
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
@@ -39,7 +30,7 @@ import javafx.stage.WindowEvent;
  */
 public class ViewDemarrage  {
 
-	AudioClip media2 = new AudioClip(new File ("c:\\sound.mp3").toURI().toString());
+
 	private MainWindow fp;
 	private Stage stage;
 	private VBox root;
@@ -49,16 +40,7 @@ public class ViewDemarrage  {
 	private Button b_Mute;
 	
 	private int choix = 0;
-	private  Button btn;
 
-	private Button btn1;
-	private ImageView imageView1;
-	private ImageView imageView2;
-	private ImageView imageView3;
-	private VBox vBox1;
-	private VBox vBox2;
-    private AnchorPane AnchorPaneRoot;
-    private Pane pane;
 
 	/**
 	 * Unique constructeur de la classe {@link FenetreDemarrage}, prenant en paramètre la {@link FenetrePrincipale} fp.
@@ -82,7 +64,6 @@ public class ViewDemarrage  {
 		this.stage.initOwner(fp.getStage());
 		this.stage.initModality(Modality.APPLICATION_MODAL);
 
-		AnchorPaneRoot = new AnchorPane();
 
 		//Scene scene = new Scene(AnchorPaneRoot, 884.0,495.0);
 		//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
@@ -97,7 +78,9 @@ public class ViewDemarrage  {
 		stage.setScene(scene);
 
 		stage.setOnHiding(new EvtQuitter());
-		play_audio();
+		
+		 Music.playmusic();
+		 
 	}
 //ezez
 	/**
@@ -168,7 +151,7 @@ public class ViewDemarrage  {
 		b_Valider = new Button("PLAY");
 		b_Valider.setTranslateX(180);
 		b_Valider.setTranslateY(6);
-		b_Valider.setStyle("-fx-background-radius: 30px;-fx-font-family:'Century Gothic';-fx-background-color: #1da64a");
+		b_Valider.setStyle("-fx-background-radius: 30px;-fx-font-family:'Century Gothic';-fx-background-color: #1da64a;-fx-text-fill :#ffff");
 		b_Valider.setOnAction(new EvtValider());
 		b_Valider.setDefaultButton(true);
 		b_Valider.setOnAction(new EvtValider());
@@ -181,13 +164,13 @@ public class ViewDemarrage  {
 		b_Mute = new Button("MUTE ");
 		b_Mute.setTranslateX(360);
 		b_Mute.setTranslateY(-21);
-		b_Mute.setStyle("-fx-background-radius: 30px;-fx-font-family:'Century Gothic';-fx-background-color: #1da64a");
+		b_Mute.setStyle("-fx-background-radius: 30px;-fx-font-family:'Century Gothic';-fx-background-color: #1da64a;-fx-text-fill :#ffff");
 		b_Mute.setOnAction(new EvtMute());
 		b_Mute.setDefaultButton(true);
 		b_Mute.setOnAction(new EvtMute());
 
 		root.getChildren().add(b_Mute);
-		
+	
 
 		
 
@@ -238,7 +221,10 @@ public class ViewDemarrage  {
 
 		@Override
 		public void handle(ActionEvent event) {
+			
+			
 			ArrayList<String> champs = new ArrayList<String>();
+			
 			for(int i=0; i<4; i++) {
 				if(listeJoueurs.get(i).getText() != null && !listeJoueurs.get(i).getText().isEmpty())
 					champs.add(listeJoueurs.get(i).getText());
@@ -249,7 +235,9 @@ public class ViewDemarrage  {
 				fp.getStage().show();
 				stage.close();
 			}
+			
 			event.consume();
+		
 		}
 	}
 
@@ -266,16 +254,7 @@ public class ViewDemarrage  {
 		}
 	}
 
-	private void play_audio() {
-	
-		 
-	       
-		media2.setVolume(0.4);
-		 media2.play();
-		 
-		 
-		 
-	}
+
 	
 
 	private class EvtMute implements EventHandler<ActionEvent> {
@@ -283,18 +262,22 @@ public class ViewDemarrage  {
 		@Override
 		public void handle(ActionEvent event) {
 			// TODO Auto-generated method stub
-			
-			if (media2.isPlaying()) {	
-				media2.stop();
+			if (Music.musicstat()==true) {	
+				Music.stopmusic();
 				b_Mute.setText("UNMUTE");
+				
+				
 				}
 		
 			else {
-				play_audio();
+				Music.playmusic();
 				b_Mute.setText("MUTE");
+				
 			}
+			
 		}
 	}
+
 
 	
 }
