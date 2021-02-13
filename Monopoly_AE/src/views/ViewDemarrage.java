@@ -1,11 +1,14 @@
 package views;
 
+import java.io.File;
+import java.net.URL;
 import java.util.ArrayList;
-
+import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.NodeOrientation;
 import javafx.geometry.Pos;
@@ -23,6 +26,9 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.AudioClip;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
@@ -31,8 +37,9 @@ import javafx.stage.WindowEvent;
  * Fenêtre à afficher au démarrage d'une nouvelle {@link jeumonopoly.Partie}, permettant de sélectionner le nombre de joueur.
  * @see FenetrePrincipale
  */
-public class ViewDemarrage {
+public class ViewDemarrage  {
 
+	AudioClip media2 = new AudioClip(new File ("c:\\sound.mp3").toURI().toString());
 	private MainWindow fp;
 	private Stage stage;
 	private VBox root;
@@ -58,7 +65,8 @@ public class ViewDemarrage {
 	 * @see FenetrePrincipale
 	 */
 	public ViewDemarrage(MainWindow fp) {
-
+		
+		
 		this.fp = fp;
 
 		this.stage = new Stage();
@@ -82,6 +90,7 @@ public class ViewDemarrage {
 		stage.setScene(scene);
 
 		stage.setOnHiding(new EvtQuitter());
+		play_audio();
 	}
 
 	/**
@@ -173,118 +182,25 @@ public class ViewDemarrage {
 		imageView2.setPickOnBounds(true);
 		imageView2.setPreserveRatio(true);
 
-		imageView2.setImage(new Image("/images/upm.png"));
+		
 
 		VBox.setMargin((imageView2), new Insets(10,0,0,270));
 
 		vBox2.getChildren().add(imageView2);
 
+<<<<<<< HEAD
+		root.getChildren().add(vBox2);
+		
+		
+		
+		
+		
+		
+=======
 		root.getChildren().add(vBox2);*/
 	}
 
-	/*private void debuts(){
 
-		//AnchorPane AnchorPaneRoot =new AnchorPane();
-		//Scene scene = new Scene(AnchorPaneRoot, 884.0,495.0);
-		//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-//		stage.setScene(scene);
-//		stage.show();
-
-		AnchorPaneRoot.maxHeight(300.0);
-		AnchorPaneRoot.maxWidth(700.0);
-		AnchorPaneRoot.minHeight(300.0);
-		AnchorPaneRoot.minWidth(884.0);
-		AnchorPaneRoot.prefHeight(300.0);
-		AnchorPaneRoot.prefWidth(884.0);
-		AnchorPaneRoot.setPadding(new Insets(10));
-		AnchorPaneRoot.setStyle("-fx-background-color: #fff");
-
-		Pane pane=new Pane();
-		pane.setPrefHeight(506.0);
-		pane.setPrefWidth(884.4);
-
-		VBox vBox1 =new VBox();
-		vBox1.setPrefHeight(495.0);
-		vBox1.setPrefWidth(314.0);
-		vBox1.setStyle("-fx-background-color: teal");
-		vBox1.setBlendMode(BlendMode.SRC_OVER);
-		vBox1.setDepthTest(DepthTest.INHERIT);
-		vBox1.setNodeOrientation(NodeOrientation.LEFT_TO_RIGHT);
-		vBox1.setCenterShape(true);
-
-		ImageView imageView1=new ImageView();
-		imageView1.setFitHeight(283.0);
-		imageView1.setFitWidth(388.0);
-		imageView1.setPickOnBounds(true);
-		imageView1.setPreserveRatio(true);
-
-		imageView1.setImage(new Image("/images/monopTitle.png"));
-		vBox1.getChildren().add(imageView1);
-
-		Button btn1=new Button("Commencer");
-		btn1.setPrefHeight(58.0);
-		btn1.setPrefWidth(314.0);
-		btn1.setMnemonicParsing(false);
-		//btn1.setAlignment(Pos.CENTER_LEFT);
-		btn1.setLineSpacing(42);
-
-
-	VBox.setMargin((btn1), new Insets(0.0));
-	vBox1.getChildren().add(btn1);
-
-	/*	Button btn2=new Button("Aide");
-		btn2.setPrefHeight(55.0);
-		btn2.setPrefWidth(290.0);
-		btn2.setMnemonicParsing(false);
-		btn2.setAlignment(Pos.CENTER_LEFT);
-		btn2.setLineSpacing(0);
-
-
-	VBox.setMargin(btn2, new Insets(10.0));
-	vBox1.getChildren().add(btn2);
-
-		Button btn3=new Button("A propos");
-		btn3.setPrefHeight(55.0);
-		btn3.setPrefWidth(290.0);
-		btn3.setMnemonicParsing(false);
-		btn3.setAlignment(Pos.CENTER_LEFT);
-		btn3.setLineSpacing(0);
-
-
-	VBox.setMargin(btn3, new Insets(10.0));
-    vBox1.getChildren().add(btn3);*/
-
-	/*	ImageView imageView2= new ImageView();
-		imageView2.setFitHeight(318.0);
-		imageView2.setFitWidth(477.0);
-		imageView2.setLayoutX(356.0);
-		imageView2.setPickOnBounds(true);
-		imageView2.setPreserveRatio(true);
-
-		imageView2.setImage(new Image("/images/monop.jpeg"));
-		vBox1.getChildren().add(imageView2);
-
-		ImageView imageView3= new ImageView();
-		imageView3.setFitHeight(169.0);
-		imageView3.setFitWidth(571.0);
-		imageView3.setLayoutX(314.0);
-		imageView3.setLayoutY(333.0);
-		imageView3.setPickOnBounds(true);
-		imageView3.setPreserveRatio(true);
-
-		imageView3.setImage(new Image("/images/upm.png"));
-        vBox1.getChildren().add(imageView3);*/
-
-	//	pane.getChildren().addAll(vBox1,imageView1,btn1,/*btn2,btn3,*/imageView2,imageView3);
-
-		//AnchorPaneRoot.getChildren().addAll(pane,vBox1,imageView1,btn1,/*btn2,btn3,*/imageView2,imageView3);
-
-
-
-	/**
-	 * Renvoie la Stage de la fenêtre de démarrage.
-	 * @return stage Stage
-	 */
 	public Stage getStage() {
 		return stage;
 	}
@@ -324,12 +240,25 @@ public class ViewDemarrage {
 			event.consume();
 		}
 	}
+
+	private void play_audio() {
+	
+		 
+	       
+		
+		 media2.play();
+		 
+		 
+		 
+	}
+	
+
 	private class EvtMute implements EventHandler<ActionEvent> {
 
 		@Override
 		public void handle(ActionEvent event) {
 			// TODO Auto-generated method stub
-			
+			media2.setVolume(0.0);
 		}
 	}
 }
