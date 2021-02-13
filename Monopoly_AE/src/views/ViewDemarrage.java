@@ -286,6 +286,7 @@ public class ViewDemarrage  {
 		public void handle(ActionEvent event) {
 			// TODO Auto-generated method stub
 			play_audio();
+			//ez
 		}
 	}
 }
