@@ -258,6 +258,7 @@ public class ViewDemarrage  {
 		@Override
 		public void handle(ActionEvent event) {
 			// TODO Auto-generated method stub
+			
 			media2.stop();
 		}
 	}
