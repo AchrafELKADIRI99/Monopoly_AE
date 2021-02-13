@@ -47,6 +47,7 @@ public class ViewDemarrage  {
 	private ArrayList<TextField> listeJoueurs = new ArrayList<TextField>();
 	private Button b_Valider;
 	private Button b_Mute;
+	private Button b_UNMute;
 	private int choix = 0;
 	private  Button btn;
 
@@ -107,9 +108,15 @@ public class ViewDemarrage  {
 
 
 		VBox vBox1 =new VBox();
+
+		vBox1.setPrefHeight(884.0);
+		vBox1.setPrefWidth(495.);
+		vBox1.setStyle("-fx-background-color:linear-gradient(to right top,#3A1C71,#FDBB2D)");
+
 		//vBox1.setPrefHeight(884.0);
 		//vBox1.setPrefWidth(495.);
 		vBox1.setStyle("-fx-background-color:linear-gradient(to right top,#c9f9b6,#1da64a)");
+
 		vBox1.setBlendMode(BlendMode.SRC_OVER);
 		vBox1.setDepthTest(DepthTest.INHERIT);
 		vBox1.setNodeOrientation(NodeOrientation.LEFT_TO_RIGHT);
@@ -121,7 +128,7 @@ public class ViewDemarrage  {
 		imageView1.setFitWidth(400.0);
 		imageView1.setPickOnBounds(true);
 		imageView1.setPreserveRatio(true);
-
+		
 		imageView1.setImage(new Image("/images/monopmarrakech.png"));
 
 		VBox.setMargin((imageView1), new Insets(10,0,0,170));
@@ -165,6 +172,16 @@ public class ViewDemarrage  {
 		b_Mute.setOnAction(new EvtMute());
 
 		root.getChildren().add(b_Mute);
+		
+		b_UNMute = new Button("UNMUTE");
+		b_UNMute.setTranslateX(500);
+		b_UNMute.setTranslateY(-21);
+		b_UNMute.setStyle("-fx-background-radius: 30px;-fx-font-family:'Century Gothic'");
+		b_UNMute.setOnAction(new EvtUNMute());
+		b_UNMute.setDefaultButton(true);
+		b_UNMute.setOnAction(new EvtUNMute());
+
+		root.getChildren().add(b_UNMute);
 
 		/*VBox vBox2 =new VBox();
 		vBox2.setPrefHeight(884.0);
@@ -260,6 +277,15 @@ public class ViewDemarrage  {
 			// TODO Auto-generated method stub
 			
 			media2.stop();
+		}
+	}
+
+	private class EvtUNMute implements EventHandler<ActionEvent> {
+
+		@Override
+		public void handle(ActionEvent event) {
+			// TODO Auto-generated method stub
+			play_audio();
 		}
 	}
 }
