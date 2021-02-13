@@ -262,7 +262,7 @@ public class ViewDemarrage  {
 	
 		 
 	       
-		
+		media2.setVolume(0.4);
 		 media2.play();
 		 
 		 
