@@ -2,9 +2,10 @@ package cases;
 
 
 import java.util.Random;
+
+import Controllers.Boardmonop;
+import Controllers.Playermonop;
 import model.Case;
-import model2.Boardmonop;
-import model2.Playermonop;
 import views.MainWindow;
 
 /**

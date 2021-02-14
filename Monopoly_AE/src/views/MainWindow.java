@@ -3,6 +3,10 @@ package views;
 
 import java.util.ArrayList;
 import java.util.Random;
+
+import Controllers.Boardmonop;
+import Controllers.Party;
+import Controllers.Playermonop;
 import cases.CaseTerrain;
 import javafx.animation.TranslateTransition;
 import javafx.application.Platform;
@@ -25,9 +29,6 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import model.Case;
-import model2.Boardmonop;
-import model2.Party;
-import model2.Playermonop;
 
 
 /**

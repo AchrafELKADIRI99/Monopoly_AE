@@ -1,6 +1,9 @@
 package model;
 
 import java.util.ArrayList;
+
+import Controllers.Boardmonop;
+import Controllers.Playermonop;
 import cases.CaseAllerPrison;
 import cases.CaseChance;
 import cases.CaseCommunaute;
@@ -13,9 +16,6 @@ import cases.CaseServicePublic;
 import cases.CaseTerrain;
 
 import javafx.scene.shape.Polygon;
-
-import model2.Boardmonop;
-import model2.Playermonop;
 import views.MainWindow;
 
 /**

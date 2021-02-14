@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
-import model2.Boardmonop;
-import model2.Playermonop;
+import Controllers.Boardmonop;
+import Controllers.Playermonop;
 import views.MainWindow;
 import model.Case;
 

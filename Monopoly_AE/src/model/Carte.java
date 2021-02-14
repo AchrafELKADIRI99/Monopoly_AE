@@ -1,7 +1,7 @@
 package model;
 
-import model2.Boardmonop;
-import model2.Playermonop;
+import Controllers.Boardmonop;
+import Controllers.Playermonop;
 import views.MainWindow;
 
 public abstract class Carte {

@@ -1,10 +1,10 @@
 package cases;
 
 
+import Controllers.Boardmonop;
+import Controllers.Playermonop;
 import model.Carte;
 import model.Case;
-import model2.Boardmonop;
-import model2.Playermonop;
 import views.MainWindow;
 
 
