@@ -87,7 +87,7 @@ public class ViewDemarrage  {
 	 * Initialise la VBox root de la FenetreDemarrage avec une {@link ListView} de nombres de joueurs et un bouton de validation.
 	 */
 	private void initRoot() {
-		root.setPadding(new Insets(5,5,5,5));
+		root.setPadding(new Insets(10,10,10,10));
 		root.setSpacing(5);
        // root.resize(884, 495);
 
@@ -120,7 +120,7 @@ public class ViewDemarrage  {
 		
 		imageView1.setImage(new Image("/images/monopmarrakech.png"));
 
-		VBox.setMargin((imageView1), new Insets(5,5,5,5));
+		VBox.setMargin((imageView1), new Insets(10,10,10,10));
 
 		vBox1.getChildren().add(imageView1);
 
