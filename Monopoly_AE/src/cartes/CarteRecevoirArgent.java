@@ -1,7 +1,6 @@
 package cartes;
 
 
-import io.Console;
 import model.Carte;
 import model2.Boardmonop;
 import model2.Playermonop;
@@ -37,7 +36,6 @@ public class CarteRecevoirArgent extends Carte {
 	@Override
 	public void actionCarte(Playermonop joueur, Boardmonop plateau, MainWindow fp) {
 		
-		Console es = new Console();
 		
 		if(getNom().equals("Anniversaire")) {
 			for(int i=0; i<plateau.getNbJoueurs(); i++) {
@@ -46,13 +44,11 @@ public class CarteRecevoirArgent extends Carte {
 					joueur.ajouterArgent(1500);
 				}
 			}
-			es.println(" > "+joueur.getNom()+" reçoit 1500DHs de chaque joueur.");
 			if(fp != null)
 				fp.afficherMessage(joueur.getNom()+" reçoit 1500DHs de chaque joueur.");
 		}
 		else {
 			joueur.ajouterArgent(montant);
-			es.println(" > "+joueur.getNom()+" reçoit "+montant+"DHs de la Banque");
 		}
 	}
 

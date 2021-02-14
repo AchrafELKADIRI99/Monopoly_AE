@@ -4,7 +4,6 @@ import java.util.Random;
 
 /**
  * Crée les dés utilisés pour le jeu
-*@author WEBERT MORVRANGE
 */
 
 public class Des {

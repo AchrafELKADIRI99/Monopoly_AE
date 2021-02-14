@@ -46,7 +46,7 @@ public class MainWindow {
 	private ArrayList<Label> l_Logs = new ArrayList<Label>();
 	private ArrayList<Image> imageDes = new ArrayList<Image>();
 	private ArrayList<ImageView> Des = new ArrayList<ImageView>();
-	private Button tourSuivant = new Button("Finir son tour");
+	private Button tourSuivant = new Button("Tour suivant");
 	private Button newPartie = new Button("Nouvelle partie");
 	public Random rand = new Random();
 	public Color[] Couleurs = new Color[] {Color.RED, Color.BLUE, Color.ORANGE, Color.GREEN};
@@ -275,7 +275,7 @@ public  void chargeMainWindow(Stage primaryStage) {
         		l_ParcGratuit.setText(""+pm.getCase(20).getPrix()+"DH");
         		
         		for(int i=0; i<pm.getNbJoueurs(); i++) {
-            		l_Joueurs.get(i).setText(""+pm.getJoueur(i).getArgent()+"DH "+(pm.getJoueur(i).getCarteSortiePrison()?"[S]":""));
+            		l_Joueurs.get(i).setText(""+pm.getJoueur(i).getArgent()+"DH "+(pm.getJoueur(i).getCarteSortiePrison()?"":""));
             		
             		String listeTerrains = pm.getJoueur(i).getListeStringTerrains();
             		listeTerrains = listeTerrains.replaceAll(",", "\n");
@@ -566,8 +566,9 @@ public  void chargeMainWindow(Stage primaryStage) {
             	
             	Label vainqueur = new Label("Le vainqueur est "+pm.estVainqueur().getNom()+" !");
             	vainqueur.setTextFill(l_Pions.get(pm.estVainqueur().getID()).getFill());
-            	vainqueur.setFont(Font.font("Arial", 26));
-            	vainqueur.setTranslateX(145);
+            	vainqueur.setFont(Font.font("Arial", 18));
+            	vainqueur.setTextFill(Color.RED);;
+            	vainqueur.setTranslateX(160);
             	vainqueur.setTranslateY(525);
             	
         		root.getChildren().add(vainqueur);
@@ -576,6 +577,7 @@ public  void chargeMainWindow(Stage primaryStage) {
         		
         		newPartie.setTranslateX(463);
         		newPartie.setTranslateY(533);
+        		newPartie.setStyle("-fx-background-color: #ed1c24;-fx-text-fill: white;-fx-background-radius: 30px");
         		newPartie.setOnAction(new EvtNewPartie());
         		root.getChildren().add(newPartie);
         		

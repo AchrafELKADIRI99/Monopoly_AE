@@ -1,7 +1,7 @@
 package cases;
 
 
-import io.Console;
+
 import model.Case;
 
 import model2.Boardmonop;
@@ -10,7 +10,6 @@ import views.MainWindow;
 
 /**
  * Crée l'action pour aller en prison
-*@author WEBERT MORVRANGE
 *@see Case
 */
 public class CaseAllerPrison extends Case {
@@ -30,10 +29,9 @@ public class CaseAllerPrison extends Case {
 	 */
 	public void actionCase(Playermonop joueur, Boardmonop plateau, MainWindow fp) {
 		
-		Console es = new Console();
+	
 		
 		if(joueur.getCarteSortiePrison()) {
-			es.println(" > " + joueur.getNom() + " utilise sa carte et évite la prison !");
 			if(fp!=null) fp.afficherMessage(joueur.getNom() + " utilise sa carte et évite la prison !");
 			joueur.setCarteSortiePrison(false);
 			plateau.remettreCarteSortiePrisonDansPaquet();
@@ -41,7 +39,6 @@ public class CaseAllerPrison extends Case {
 		else {
 			joueur.setEstPrison(true);
 			joueur.setPosition(10);
-			es.println(" > " + joueur.getNom() + " est envoyé en prison!");
 			if(fp!=null) fp.afficherMessage(joueur.getNom() + " est envoyé en prison!");
 		}
 	}
@@ -56,16 +53,12 @@ public class CaseAllerPrison extends Case {
 
 	public static void main(String[] args){
 		
-		System.out.println("TEST DE LA CLASSE : CaseAllerPrison \n");
 		Playermonop j = new Playermonop("Yann", 0, 150000);
 		Boardmonop p = new Boardmonop(4);
 		
 		CaseAllerPrison c = (CaseAllerPrison) p.getCase(30);
 		j.setPosition(30);
-		System.out.println("\nLe joueur est sur la case "+ c.toString()+"\n");
 		c.actionCase(j, p, null);
-		System.out.println("\nMaintenant, le joueur est sur la case "+ p.getCase(j.getPosition()).toString()+" et est donc en prison\n");
-		System.out.println(j.toString());
 	}
 	/* ===========================
 	   Méthodes abstraites de Case 

@@ -2,7 +2,6 @@ package model;
 
 /**
  * Définit le joueur
-*@author WEBERT MORVRANGE
 */
 
 public abstract class Player {

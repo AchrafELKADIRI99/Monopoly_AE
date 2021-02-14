@@ -1,7 +1,6 @@
 package cartes;
 
 
-import io.Console;
 import model.Carte;
 import model2.Boardmonop;
 import model2.Playermonop;
@@ -31,8 +30,6 @@ public class CarteSortirPrison extends Carte {
 	@Override
 	public void actionCarte(Playermonop joueur, Boardmonop plateau, MainWindow fp) {
 		
-		Console es = new Console();
-		es.println(" > "+joueur.getNom()+" recoit la carte 'Sortir de prison' !");
 		if(fp != null)
 			fp.afficherMessage(joueur.getNom()+" recoit la carte 'Sortir de prison' !");
 		

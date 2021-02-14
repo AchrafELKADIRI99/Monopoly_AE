@@ -6,10 +6,10 @@ import javafx.scene.paint.Color;
 import model.Case;
 import model.Player;
 
-/**
- * Définit un joueur et toutes ses données dans le jeu du Monopoly
-*@author WEBERT MORVRANGE
-*/
+
+// Définit un joueur et toutes ses données dans le jeu du Monopoly
+
+
 
 public class Playermonop extends Player {
 
@@ -23,7 +23,7 @@ public class Playermonop extends Player {
 	private ArrayList<Case> terrains = new ArrayList<Case>();
 	private ArrayList<String> couleurs = new ArrayList<String>();
 	
-	/* CONSTRUCTEUR */
+	// CONSTRUCTEUR 
 	
 	public Playermonop(String nom, int id, int argent) {
 		super(nom, id);
@@ -31,11 +31,11 @@ public class Playermonop extends Player {
 	}
 
 	
-	/* PARTIE PRISON  */
+	// PARTIE PRISON  
 	
 	/**
-	 * Renvoie le nombre de tours en prison
-	 * @return toursEnPrison
+	  Renvoie le nombre de tours en prison
+	  @return toursEnPrison
 	 */
 	public int getToursEnPrison() {
 		return toursEnPrison;

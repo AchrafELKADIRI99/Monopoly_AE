@@ -4,7 +4,6 @@ package model2;
 import java.util.ArrayList;
 
 
-import io.Console;
 import model.Case;
 import views.MainWindow;
 import javafx.concurrent.Service;
@@ -13,7 +12,6 @@ import javafx.concurrent.Task;
 
 /**
  * Lance la partie
-*@author WEBERT MORVRANGE
 */
 
 public class Party {
@@ -62,8 +60,6 @@ public class Party {
 
                     @Override
                     protected Void call() throws Exception {
-                    	Console es = new Console();
-                    	es.println("La partie démarre!");
                 		
                 		Playermonop joueur;
                 		int lancé;
@@ -75,9 +71,7 @@ public class Party {
                 			joueur = pm.getJoueurActif();
                 			
                 			if(pm.getJoueurActifID() == 0)
-                				es.println("=== DEBUT DU TOUR " + pm.getNbTours() + " ===");
                 				
-                			es.println("C'est au tour de " + joueur.getNom() + " (possède " + joueur.getArgent() + "DH)");
                 			fp.afficherMessage("C'est au tour de " + joueur.getNom() + " (possède " + joueur.getArgent() + "DH)");
                 			
                 			if(!joueur.getEstBanqueroute()) {
@@ -88,15 +82,12 @@ public class Party {
                 				if(!joueur.getEstPrison()) {
                 					
                     				fp.afficherDes(pm);
-                					es.println("" + joueur.getNom() + " lance les dés... [" + pm.des.getDe1() + "][" + pm.des.getDe2() + "]... et obtient un " + lancé + " !");
                 					pm.deplacerJoueur(joueur, lancé);
                 					fp.deplacerPion(joueur);
                 					
                 					caze = pm.getCase(joueur.getPosition());
-                					es.println("" + joueur.getNom() + " avance de " + lancé + " cases et atterit sur " + caze.getNom());
                 				}
                 				else {
-                					es.println("Le joueur est en prison.");
                 					
                 					caze = pm.getCase(joueur.getPosition());
                 				}
@@ -109,12 +100,8 @@ public class Party {
                     			
                 				caze.actionCase(joueur, pm, fp);
                     			
-                				es.println("" + joueur.getNom() + " possède à la fin de son tour " + joueur.getArgent() + "DH");
-                				System.out.println("et les terrains suivants :\n" + joueur.getListeStringTerrains());
                 			}
-                			else {
-                				es.println("" + pm.getJoueurActif().getNom() + " est en banqueroute, il ne joue pas.");
-                			}
+                		
                 			
                 			Thread.sleep(400);
                 			fp.deplacerPion(joueur);
@@ -123,14 +110,11 @@ public class Party {
                 			pausePartie = !joueur.getEstBanqueroute();
                 			while(pausePartie && !PARTIE_AUTO){ Thread.sleep(200); }
                 			
-                			es.println("");
                 			fp.effacerDes();
                 			pm.setJoueurSuivant();
                 			
                 		}
                 		
-                		es.println("=== Fin de la partie ===");
-                		es.println(" Le vainqueur est " + pm.estVainqueur().getNom() + " !");
                         
                 		fp.afficherVainqueur(pm);
                 		

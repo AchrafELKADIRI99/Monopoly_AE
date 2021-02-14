@@ -2,7 +2,6 @@ package cases;
 
 import java.util.Random;
 
-import io.Console;
 import model2.Boardmonop;
 import model2.Playermonop;
 import views.MainWindow;
@@ -10,7 +9,6 @@ import model.Case;
 
 /**
  * Crée l'action d'une case gare
-*@author WEBERT MORVRANGE
 */
 
 public class CaseGare extends Case {
@@ -35,7 +33,6 @@ public class CaseGare extends Case {
 	 */
 	public void actionCase(Playermonop joueur, Boardmonop plateau, MainWindow fp) {
 		
-		Console es = new Console();
 		
 		if(this.getProprietaire() == null) {
 			if(getReponseQuestion()) {
@@ -43,7 +40,6 @@ public class CaseGare extends Case {
 					fp.setMarqueurProprietaire(joueur, this);
 			}
 			else {
-				es.println(" > " + joueur.getNom() + " décide de ne pas acheter cette gare.");
 				fp.afficherMessage(joueur.getNom() + " décide de ne pas acheter cette gare.");
 			}
 		}
@@ -51,7 +47,6 @@ public class CaseGare extends Case {
 			payerLoyer(joueur, fp);
 
 		else {
-			es.println(" > " + joueur.getNom() + " est dans sa propre gare.");
 			fp.afficherMessage(joueur.getNom() + " est dans sa propre gare.");
 		}
 	}
@@ -59,7 +54,6 @@ public class CaseGare extends Case {
 	
 	public boolean acheterTerrain(Playermonop joueur, MainWindow fp) {
 		if((joueur.getArgent() - this.getPrix()) <= 0) {
-			System.out.println("Vous n'avez pas assez d'argent!");
 			return false;
 		}
 		else {
@@ -68,7 +62,6 @@ public class CaseGare extends Case {
 			joueur.retirerArgent(this.getPrix());
 			joueur.setNbGares(joueur.getNbGares() + 1);
 			
-			System.out.println(" > " + joueur.getNom() + " achète " + this.getNom() + " pour " + this.getPrix() + "DH");
 			if(fp!=null) fp.afficherMessage(joueur.getNom() + " achète " + this.getNom() + " pour " + this.getPrix() + "DH");
 			return true;
 		}
@@ -85,11 +78,9 @@ public class CaseGare extends Case {
 				this.getProprietaire().ajouterArgent(getLoyer());
 				beneficiaire = this.getProprietaire().getNom();
 			}
-			System.out.println(" > " + joueur.getNom() + " paye un loyer de " + getLoyer() + "DH à " + beneficiaire);
 			if(fp!=null) fp.afficherMessage(joueur.getNom() + " paye un loyer de " + getLoyer() + "DH à " + beneficiaire);
 		}
 		else {
-			System.out.println(" > Le propriétaire est en prison. " + joueur.getNom() + " ne paye pas de loyer.");
 			if(fp!=null) fp.afficherMessage("Le propriétaire est en prison. " + joueur.getNom() + " ne paye pas de loyer.");
 		}
 	}
@@ -131,7 +122,7 @@ public class CaseGare extends Case {
 
 	@Override
 	public int getLoyer() {
-		return proprietaire != null ? 50 * this.getProprietaire().getNbGares() : 0;
+		return proprietaire != null ? 7500 * this.getProprietaire().getNbGares() : 0;
 	}
 
 	@Override
@@ -171,33 +162,26 @@ public class CaseGare extends Case {
 	
 	public static void main(String[] args) {
 		
-		Console es = new Console();
-		es.println("TEST DE LA CLASSE : CaseGare");
 
 		Playermonop j1 = new Playermonop("Yann", 0, 150000);
 		Playermonop j2 = new Playermonop("Benoit", 1, 150000);
 		Boardmonop pm = new Boardmonop(2);
-		es.println(j1.toString());
-		es.println(j2.toString()+"\n");
+		
 		
 		CaseGare c = (CaseGare) pm.getCase(5);
 		c.acheterTerrain(j1, null);
 
-		es.println("== Nombres de gares de " + j1.getNom() + " : " + j1.getNbGares());
 		
 		c.payerLoyer(j2, null);
-		es.println("");
 		
 		c = (CaseGare) pm.getCase(15);
 		c.acheterTerrain(j1, null);
 		c = (CaseGare) pm.getCase(25);
 		c.acheterTerrain(j1, null);
-		es.println("== Nombres de gares de " + j1.getNom() + " : " + j1.getNbGares());
 
 		c.payerLoyer(j2, null);
 		
-		es.println("\n" + j1.toString());
-		es.println(j2.toString());
+		
 	}
 
 }

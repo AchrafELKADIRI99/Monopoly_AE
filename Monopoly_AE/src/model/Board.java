@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 /**
  * Définit le plateau du jeu
-*@author WEBERT MORVRANGE
 */
 
 public abstract class Board {

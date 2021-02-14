@@ -5,12 +5,10 @@ import model.Case;
 import model2.Boardmonop;
 import model2.Playermonop;
 import views.MainWindow;
-import io.Console;
 
 
 /**
  * Crée l'action de la case Service Public
-*@author WEBERT MORVRANGE
 */
 
 public class CaseServicePublic extends Case {
@@ -35,7 +33,6 @@ public class CaseServicePublic extends Case {
 	 */
 	public void actionCase(Playermonop joueur, Boardmonop plateau, MainWindow fp) {
 		
-		Console es = new Console();
 		
 		if(this.getProprietaire() == null) {
 			if(getReponseQuestion()) {
@@ -43,7 +40,6 @@ public class CaseServicePublic extends Case {
 					fp.setMarqueurProprietaire(joueur, this);
 			}
 			else {
-				es.println(" > " + joueur.getNom() + " décide de ne pas acheter cette compagnie.");
 				fp.afficherMessage(joueur.getNom() + " décide de ne pas acheter cette compagnie.");
 			}
 		}
@@ -52,7 +48,6 @@ public class CaseServicePublic extends Case {
 			payerLoyer(joueur, plateau, fp);
 			
 		else {
-			es.println(" > " + joueur.getNom() + " possède la compagnie.");
 			if(fp!=null) fp.afficherMessage("Le propriétaire est en prison. " + joueur.getNom() + " ne paye pas de loyer.");
 		}
 	}
@@ -60,7 +55,6 @@ public class CaseServicePublic extends Case {
 	
 	public boolean acheterTerrain(Playermonop joueur, MainWindow fp) {
 		if((joueur.getArgent() - this.getPrix()) <= 0) {
-			System.out.println("Vous n'avez pas assez d'argent!");
 			return false;
 		}
 		else {
@@ -69,7 +63,6 @@ public class CaseServicePublic extends Case {
 			joueur.retirerArgent(this.getPrix());
 			joueur.setNbServices(joueur.getNbServices() + 1);
 			
-			System.out.println(" > " + joueur.getNom() + " achète " + this.getNom() + " pour " + this.getPrix() + "DH");
 			if(fp!=null) fp.afficherMessage(joueur.getNom() + " achète " + this.getNom() + " pour " + this.getPrix() + "DH");
 			return true;
 		}
@@ -80,7 +73,7 @@ public class CaseServicePublic extends Case {
 		
 		if(!this.getProprietaire().getEstPrison()) {
 			
-			int loyer = pm.des.lancerDes();
+			int loyer = pm.des.lancerDes()*100;
 			if(fp!=null) {
 				fp.effacerDes();
 				fp.afficherDes(pm);
@@ -89,18 +82,15 @@ public class CaseServicePublic extends Case {
 			if(this.getProprietaire().getNbServices() == 2) loyer*=10;
 			else loyer*=4;
 			
-			System.out.println(" > " + joueur.getNom() + " lance les dés... [" + pm.des.getDe1() + "][" + pm.des.getDe2() + "]... et obtient un " + pm.des.getDes());
 			joueur.retirerArgent(loyer);
 			
 			if(!this.getProprietaire().getEstBanqueroute()) {
 				this.getProprietaire().ajouterArgent(loyer);
 				beneficiaire = this.getProprietaire().getNom();
 			}
-			System.out.println(" > " + joueur.getNom() + " paye un loyer de " + loyer + "DH à " + beneficiaire);
 			if(fp!=null) fp.afficherMessage(joueur.getNom() + " paye un loyer de " + loyer + "DH à " + beneficiaire);
 		}
 		else {
-			System.out.println(" > Le propriétaire est en prison. " + joueur.getNom() + " ne paye pas de loyer.");
 			if(fp!=null) fp.afficherMessage("Le propriétaire est en prison. " + joueur.getNom() + " ne paye pas de loyer.");
 		}
 	}
@@ -182,29 +172,22 @@ public class CaseServicePublic extends Case {
 	
 	public static void main(String[] args) {
 		
-		Console es = new Console();
-		es.println("TEST DE LA CLASSE : CaseServicePublic");
 		
 		Playermonop j1 = new Playermonop("Yann", 0, 150000);
 		Playermonop j2 = new Playermonop("Benoit", 1, 150000);
 		Boardmonop pm = new Boardmonop(2);
-		es.println(j1.toString()+"\n");
 		
 		CaseServicePublic c = (CaseServicePublic) pm.getCase(12);
 		c.acheterTerrain(j1, null);
 
-		es.println("== Nombres de SP de " + j1.getNom() + " : " + j1.getNbServices());
 		
 		c.payerLoyer(j2, pm, null);
-		es.println("");
 		
 		c = (CaseServicePublic) pm.getCase(28);
 		c.acheterTerrain(j1, null);
-		es.println("== Nombres de SP de " + j1.getNom() + " : " + j1.getNbServices());
 
 		c.payerLoyer(j2, pm, null);
 
-		es.println("\n" + j1.toString());
 	}
 
 }

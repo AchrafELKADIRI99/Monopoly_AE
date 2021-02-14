@@ -1,7 +1,6 @@
 package cases;
 
 
-import io.Console;
 import model.Carte;
 import model.Case;
 import model2.Boardmonop;
@@ -11,7 +10,6 @@ import views.MainWindow;
 
 /**
  * Crée l'action d'une case communauté
-*@author WEBERT MORVRANGE
 */
 
 public class CaseCommunaute extends Case {
@@ -34,10 +32,8 @@ public class CaseCommunaute extends Case {
 	 */
 	public void fenetreAction(MainWindow fp) {
 		
-Console es = new Console();
 		
 		Carte carte = fp.getPartie().getPM().tirerCarteCommunauté();
-		es.println(" > " + fp.getPartie().getPM().getJoueurActif().getNom() + " tire la carte "+carte.getNom());
 		fp.afficherMessage(fp.getPartie().getPM().getJoueurActif().getNom() + " tire la carte "+carte.getNom());
 		
 		carte.actionCarte(fp.getPartie().getPM().getJoueurActif(), fp.getPartie().getPM(), fp);

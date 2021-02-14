@@ -4,7 +4,6 @@ import model.Carte;
 import model2.Boardmonop;
 import model2.Playermonop;
 import views.MainWindow;
-import io.Console;
 
 /**
  * Type de {@link Carte} pour les déplacements de joueurs.<br><br>
@@ -42,14 +41,12 @@ public class CarteDeplacement extends Carte {
 	@Override
 	public void actionCarte(Playermonop joueur, Boardmonop plateau, MainWindow fp) {
 		
-		Console es = new Console();
 		
 		if(deplacementRelatif) //Pour les cartes "Reculez/avancez et X cases"
 			plateau.deplacerJoueur(joueur, position);
 		else {
 			if(getNom().equals("Prison")) {
 				if(joueur.getCarteSortiePrison()) {
-					es.println(" > " + joueur.getNom() + " utilise sa carte et évite la prison !");
 					if(fp != null)
 						fp.afficherMessage(joueur.getNom() + " utilise sa carte et évite la prison !");
 					joueur.setCarteSortiePrison(false);
@@ -67,12 +64,10 @@ public class CarteDeplacement extends Carte {
 		}
 		
 		if(getNom().equals("Prison")) {
-			es.println(" > "+joueur.getNom()+" se retrouve en prison.");
 			if(fp != null)
 				fp.afficherMessage(joueur.getNom()+" se retrouve en prison.");
 		}
 		else {
-			es.println(" > "+joueur.getNom()+" atterit sur "+plateau.getCaseActive().getNom());
 			if(fp != null)
 				fp.afficherMessage(joueur.getNom()+" atterit sur "+plateau.getCaseActive().getNom());
 			

@@ -6,11 +6,9 @@ import model.Case;
 import model2.Boardmonop;
 import model2.Playermonop;
 import views.MainWindow;
-import io.Console;
 
 /**
  * Crée l'action de la case Prison
-*@author WEBERT MORVRANGE
 */
 public class CasePrison extends Case {
 	
@@ -34,7 +32,6 @@ public class CasePrison extends Case {
 	 */
 	public void actionCase(Playermonop joueur, Boardmonop plateau, MainWindow fp) {
 		
-		Console es = new Console();
 		
 		
 		int lancé = plateau.des.lancerDes();
@@ -45,49 +42,37 @@ public class CasePrison extends Case {
 			
 			if(fp != null) fp.afficherDes(plateau);
 			
-			es.println("Voulez vous payer 7500DH pour sortir de prison ? ");
 			
 			if(getReponseQuestion()){
-				es.println("OUI : " + joueur.getNom() + " décide de payer 7500DH pour sortir de prison.");
 				joueur.retirerArgent(7500);
 				reponseQuestion = false;
 				joueur.setEstPrison(false);
 				joueur.setToursEnPrison(1);
 				plateau.deplacerJoueur(joueur, lancé);
-				es.println("" + joueur.getNom() + " lance les dés... [" + d1 + "][" + d2 + "]... et obtient un " + lancé + " !");
-				es.println("" + joueur.getNom() + " avance de " + lancé + " cases et atterit sur " + plateau.getCaseActive().getNom());
 				if(fp!= null) actionSortiePrison(plateau, joueur, fp);
 			}
 			else{
 				if(joueur.getToursEnPrison() > 2) {
-					es.println("NON : " + joueur.getNom() + " est a son 3e tour en prison, il sort et paye 7500DH.");
 					joueur.retirerArgent(7500);
 					joueur.setEstPrison(false);
 					joueur.setToursEnPrison(1);
 					plateau.deplacerJoueur(joueur, lancé);
-					es.println("" + joueur.getNom() + " lance les dés... [" + d1 + "][" + d2 + "]... et obtient un " + lancé + " !");
-					es.println("" + joueur.getNom() + " avance de " + lancé + " cases et atterit sur " + plateau.getCaseActive().getNom());
 					if(fp!=null) actionSortiePrison(plateau, joueur, fp);
 				}
 				else{
-					es.println("NON : " + joueur.getNom() + " (tour " + joueur.getToursEnPrison() + ") décide de ne pas payer et lance ses dés...");
 					if(d1 == d2){
-						es.println("  [" + d1 + "][" + d2 + "] Gagné! " + joueur.getNom() + " sort de prison sans payer!");
 						joueur.setEstPrison(false);
 						joueur.setToursEnPrison(1);
 						plateau.deplacerJoueur(joueur, lancé);
-						es.println("" + joueur.getNom() + " avance de " + lancé + " cases et atterit sur " + plateau.getCaseActive().getNom());
 						if(fp!=null) actionSortiePrison(plateau, joueur, fp);
 					}
 					else{
-						es.println("  [" + d1 + "][" + d2 + "] Perdu!");
 						joueur.setToursEnPrison(joueur.getToursEnPrison() + 1);
 					}
 				}
 			}
 		}
 		else{
-			es.println(" > Le joueur observe les criminels...");
 			if(fp != null) fp.afficherMessage("Le joueur observe les criminels...");
 		}
 		
@@ -137,7 +122,6 @@ public class CasePrison extends Case {
 	
 	public static void main(String[] args){
 		
-		System.out.println("TEST DE LA CLASSE : CasePrison \n");
 		Playermonop j = new Playermonop("Yann", 0, 150000);
 		Boardmonop p = new Boardmonop(4);
 		
@@ -145,21 +129,14 @@ public class CasePrison extends Case {
 		
 		j.setPosition(10);
 		j.setEstPrison(true);
-		System.out.println("Joueur en prison mais ne veut pas sortir : " + j.toString()+"\n");
-		System.out.println(c.toString()+"\n");
 		c.actionCase(j, p, null);
 		
 		j.setEstPrison(true);
-		System.out.println("\nJoueur en prison veut sortir : " + j.toString()+"\n");
 		c.setReponseQuestion(true);
-		System.out.println(c.toString()+"\n");
 		c.actionCase(j, p, null);
 		
-		System.out.println("\nJoueur en simple visite : " + j.toString()+"\n");
-		System.out.println(c.toString()+"\n");
 		c.actionCase(j, p, null);
 		
-		System.out.println("\nJoueur après la prison : " + j.toString());
 	}
 	
 	/* ===========================

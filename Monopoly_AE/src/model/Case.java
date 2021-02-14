@@ -20,7 +20,6 @@ import views.MainWindow;
 
 /**
  * Définit les cases du Monopoly
-*@author WEBERT MORVRANGE
 */
 
 public abstract class Case {

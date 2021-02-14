@@ -26,7 +26,6 @@ import model.Player;
 
 /**
  * Initialise le plateau du monopoly avec toutes ses cases
-*@author WEBERT MORVRANGE
 */
 public class Boardmonop extends Board {
 
@@ -179,8 +178,7 @@ public class Boardmonop extends Board {
 		
 		if((joueur.getPosition() + nombreDeCases) >= getNbCases()) {
 			pos = (joueur.getPosition() + nombreDeCases) % getNbCases();
-			System.out.println(" > " + joueur.getNom() + " passe par la case départ et gagne 20000DH !");
-			joueur.ajouterArgent(20000);
+			joueur.ajouterArgent(0); //same case depp add money
 		}
 		else
 			pos = joueur.getPosition() + nombreDeCases;

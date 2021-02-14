@@ -3,7 +3,6 @@ package cases;
 import cartes.CartePayerArgent;
 import cartes.CarteSortirPrison;
 
-import io.Console;
 import model.Carte;
 import model.Case;
 import model2.Boardmonop;
@@ -13,7 +12,6 @@ import views.MainWindow;
 
 /**
  * Crée l'action d'une case chance
-*@author WEBERT MORVRANGE
 */
 public class CaseChance extends Case {
 	
@@ -35,10 +33,8 @@ public class CaseChance extends Case {
 	 */
 	public void fenetreAction(MainWindow fp) {
 		
-		Console es = new Console();
 		
 		Carte carte = fp.getPartie().getPM().tirerCarteChance();
-		es.println(" > " + fp.getPartie().getPM().getJoueurActif().getNom() + " tire la carte "+carte.getNom());
 		fp.afficherMessage(fp.getPartie().getPM().getJoueurActif().getNom() + " tire la carte "+carte.getNom());
 		
 		if(fp.getPartie().PARTIE_AUTO)
@@ -112,18 +108,13 @@ public class CaseChance extends Case {
 	
 	public static void main(String[] args) {
 		
-		System.out.println("TEST DE LA CLASSE : CaseChance");
 		Playermonop j = new Playermonop("Yann", 0, 150000);
 		Boardmonop p = new Boardmonop(4);
 		CartePayerArgent payer = new CartePayerArgent("Amende", "Amende pour excès de vitesse : 2250Dh.", 2250);
-		System.out.println(payer.toString());
 		payer.actionCarte(j, p, null);
-		System.out.println(j.toString()); //Le joueur Yann perd 2250DH
-		System.out.println(p.getCase(20).toString());
+		
 		
 		CarteSortirPrison prison = new CarteSortirPrison("Sortie", "Vous êtes libéré de prison. \n(Cette carte doit être conservée)");
-		System.out.println(prison.toString());
 		prison.actionCarte(j, p, null);
-		System.out.println(j.toString()); //Le joueur Yann possède la carte de sortie de prison
 	}
 }
