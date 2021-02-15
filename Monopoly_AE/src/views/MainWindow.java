@@ -29,12 +29,19 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import model.Case;
+import state.Context;
+import state.StartState;
+import state.StopState;
 
 
 /**
  * Fenêtre javafx principale pour l'affichage du jeu de Monopoly. 
  */
 public class MainWindow {
+	Context context = new Context();
+	StartState startState = new StartState();
+	StopState stopState = new StopState();
+
 	
 	private Button b_Mute;
 	private Stage stage;
@@ -114,7 +121,7 @@ public  void chargeMainWindow(Stage primaryStage) {
 	 */
 	@SuppressWarnings("static-access")
 	private void initRoot() {
-		Music.musicstat();
+		
 		root.setStyle("-fx-background-image: url('images/plateau.png'); -fx-background-repeat: no-repeat");
 		root.setAlignment(Pos.TOP_LEFT);
 		
@@ -693,14 +700,14 @@ public  void chargeMainWindow(Stage primaryStage) {
 		public void handle(ActionEvent event) {
 			// TODO Auto-generated method stub
 			
-			if (Music.musicstat()==true) {	
-				Music.stopmusic();
+			if (context.etat()==true) {	
+				stopState.doAction(context);
 				b_Mute.setText("UNMUTE");
 				
 				}
 		
 			else {
-				Music.playmusic();
+				startState.doAction(context);
 				b_Mute.setText("MUTE");
 				
 			}

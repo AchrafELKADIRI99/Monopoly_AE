@@ -23,6 +23,9 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
+import state.Context;
+import state.StartState;
+import state.StopState;
 
 /**
  * Fenêtre à afficher au démarrage d'une nouvelle {@link jeumonopoly.Partie}, permettant de sélectionner le nombre de joueur.
@@ -30,7 +33,9 @@ import javafx.stage.WindowEvent;
  */
 public class ViewDemarrage  {
 
-
+	Context context = new Context();
+	StartState startState = new StartState();
+	StopState stopState = new StopState();
 	private MainWindow fp;
 	private Stage stage;
 	private VBox root;
@@ -79,7 +84,7 @@ public class ViewDemarrage  {
 
 		stage.setOnHiding(new EvtQuitter());
 		
-		 Music.playmusic();
+		startState.doAction(context);
 		 
 	}
 //ezez
@@ -262,15 +267,15 @@ public class ViewDemarrage  {
 		@Override
 		public void handle(ActionEvent event) {
 			// TODO Auto-generated method stub
-			if (Music.musicstat()==true) {	
-				Music.stopmusic();
+			if (context.etat()==true) {	
+				stopState.doAction(context);
 				b_Mute.setText("UNMUTE");
 				
 				
 				}
 		
 			else {
-				Music.playmusic();
+				startState.doAction(context);
 				b_Mute.setText("MUTE");
 				
 			}
