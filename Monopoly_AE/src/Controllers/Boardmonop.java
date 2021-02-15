@@ -88,35 +88,35 @@ public class Boardmonop extends Board {
 		setCase(38, new CaseImpots("Taxe de Luxe", 15000));
 		
 		/* INITIALISATION DES TERRAINS */
-		setCase(1, new CaseTerrain("DOHA", 9000, new ArrayList<Integer>(Arrays.asList(300, 1500, 4500, 13500, 24000, 37500)), 75000, 0, "brun"));
-		setCase(3, new CaseTerrain("SAADA", 9000, new ArrayList<Integer>(Arrays.asList(600, 3000, 9000, 27500, 48000, 67500)), 75000, 0, "brun"));
+		setCase(1, new CaseTerrain("DOHA", 9000, new ArrayList<Integer>(Arrays.asList(300, 1500, 4500, 13500, 24000, 37500)), 1000, 0, "brun"));
+		setCase(3, new CaseTerrain("SAADA", 9000, new ArrayList<Integer>(Arrays.asList(600, 3000, 9000, 27500, 48000, 67500)), 1000, 0, "brun"));
 		
-		setCase(6, new CaseTerrain("AZOUZIA", 15000, new ArrayList<Integer>(Arrays.asList(900, 4500, 13500, 40500, 60000, 82500)), 75000, 0, "turquoise"));
-		setCase(8, new CaseTerrain("JNANE AWRAD", 15000, new ArrayList<Integer>(Arrays.asList(900, 4500, 13500, 40500, 60000, 82500)), 75000, 0, "turquoise"));
-		setCase(9, new CaseTerrain("HAY ZITOUN", 18000, new ArrayList<Integer>(Arrays.asList(1200, 6000, 15000, 45000, 67500, 90000)), 75000, 0, "turquoise"));
+		setCase(6, new CaseTerrain("AZOUZIA", 15000, new ArrayList<Integer>(Arrays.asList(900, 4500, 13500, 40500, 60000, 82500)), 1500, 0, "turquoise"));
+		setCase(8, new CaseTerrain("JNANE AWRAD", 15000, new ArrayList<Integer>(Arrays.asList(900, 4500, 13500, 40500, 60000, 82500)), 1500, 0, "turquoise"));
+		setCase(9, new CaseTerrain("HAY ZITOUN", 18000, new ArrayList<Integer>(Arrays.asList(1200, 6000, 15000, 45000, 67500, 90000)), 1500, 0, "turquoise"));
 		
-		setCase(11, new CaseTerrain("MASSIRA 1", 21000, new ArrayList<Integer>(Arrays.asList(1500, 7500, 22500, 67500, 93750, 112500)), 15000, 0, "mauve"));
-		setCase(13, new CaseTerrain("MASSIRA 2", 21000, new ArrayList<Integer>(Arrays.asList(1500, 7500, 22500, 67500, 93750, 112500)), 15000, 0, "mauve"));
-		setCase(14, new CaseTerrain("MASSIRA 3", 24000, new ArrayList<Integer>(Arrays.asList(1800, 9000, 27000, 75000, 105000, 135000)), 15000, 0, "mauve"));
+		setCase(11, new CaseTerrain("MASSIRA 1", 21000, new ArrayList<Integer>(Arrays.asList(1500, 7500, 22500, 67500, 93750, 112500)), 2000, 0, "mauve"));
+		setCase(13, new CaseTerrain("MASSIRA 2", 21000, new ArrayList<Integer>(Arrays.asList(1500, 7500, 22500, 67500, 93750, 112500)), 2000, 0, "mauve"));
+		setCase(14, new CaseTerrain("MASSIRA 3", 24000, new ArrayList<Integer>(Arrays.asList(1800, 9000, 27000, 75000, 105000, 135000)), 2000, 0, "mauve"));
 		
-		setCase(16, new CaseTerrain("BAB DOUKKALA", 27000, new ArrayList<Integer>(Arrays.asList(2100, 10500, 3000, 82500, 112500, 142500)), 15000, 0, "orange"));
-		setCase(18, new CaseTerrain("SOKOMA", 27000, new ArrayList<Integer>(Arrays.asList(2100, 10500, 30000, 82500, 112500, 142500)), 15000, 0, "orange"));
-		setCase(19, new CaseTerrain("SIDI GHANEM", 30000, new ArrayList<Integer>(Arrays.asList(2400, 12000, 33000, 90000, 120000, 150000)), 15000, 0, "orange"));
+		setCase(16, new CaseTerrain("BAB DOUKKALA", 27000, new ArrayList<Integer>(Arrays.asList(2100, 10500, 3000, 82500, 112500, 142500)), 25000, 0, "orange"));
+		setCase(18, new CaseTerrain("SOKOMA", 27000, new ArrayList<Integer>(Arrays.asList(2100, 10500, 30000, 82500, 112500, 142500)), 25000, 0, "orange"));
+		setCase(19, new CaseTerrain("SIDI GHANEM", 30000, new ArrayList<Integer>(Arrays.asList(2400, 12000, 33000, 90000, 120000, 150000)), 25000, 0, "orange"));
 		
-		setCase(21, new CaseTerrain("AIN ITTI", 33000, new ArrayList<Integer>(Arrays.asList(2700, 13500, 37500, 105000, 131250, 157500)), 22500, 0, "rouge"));
-		setCase(23, new CaseTerrain("M'HAMID", 33000, new ArrayList<Integer>(Arrays.asList(2700, 13500, 37500, 105000, 131250, 157500)), 22500, 0, "rouge"));
-		setCase(24, new CaseTerrain("BIN LKCHALI", 36000, new ArrayList<Integer>(Arrays.asList(3000, 15000, 45000, 112500, 138750, 165000)), 22500, 0, "rouge"));
+		setCase(21, new CaseTerrain("AIN ITTI", 33000, new ArrayList<Integer>(Arrays.asList(2700, 13500, 37500, 105000, 131250, 157500)), 3000, 0, "rouge"));
+		setCase(23, new CaseTerrain("M'HAMID", 33000, new ArrayList<Integer>(Arrays.asList(2700, 13500, 37500, 105000, 131250, 157500)), 3000, 0, "rouge"));
+		setCase(24, new CaseTerrain("BIN LKCHALI", 36000, new ArrayList<Integer>(Arrays.asList(3000, 15000, 45000, 112500, 138750, 165000)), 3000, 0, "rouge"));
 		
-		setCase(26, new CaseTerrain("AIN MEZZOUAR", 39000, new ArrayList<Integer>(Arrays.asList(3300, 16500, 49500, 120000, 146250, 172500)), 22500, 0, "jaune"));
-		setCase(27, new CaseTerrain("AZLI", 39000, new ArrayList<Integer>(Arrays.asList(3300, 16500, 49500, 120000, 146250, 172500)), 22500, 0, "jaune"));
-		setCase(29, new CaseTerrain("IZDIHAR", 42000, new ArrayList<Integer>(Arrays.asList(3600, 18000, 54000, 127500, 153750, 180000)), 22500, 0, "jaune"));
+		setCase(26, new CaseTerrain("AIN MEZZOUAR", 39000, new ArrayList<Integer>(Arrays.asList(3300, 16500, 49500, 120000, 146250, 172500)), 3500, 0, "jaune"));
+		setCase(27, new CaseTerrain("AZLI", 39000, new ArrayList<Integer>(Arrays.asList(3300, 16500, 49500, 120000, 146250, 172500)), 3500, 0, "jaune"));
+		setCase(29, new CaseTerrain("IZDIHAR", 42000, new ArrayList<Integer>(Arrays.asList(3600, 18000, 54000, 127500, 153750, 180000)), 3500, 0, "jaune"));
 		
-		setCase(31, new CaseTerrain("Avenue ALLAL EL FASSI", 45000, new ArrayList<Integer>(Arrays.asList(3900, 19500, 58500, 135000, 165000, 191250)), 30000, 0, "vert"));
-		setCase(32, new CaseTerrain("L'HIVERNAGE", 45000, new ArrayList<Integer>(Arrays.asList(3900, 19500, 58500, 135000, 165000, 191250)), 30000, 0, "vert"));
-		setCase(34, new CaseTerrain("GUELIZ", 48000, new ArrayList<Integer>(Arrays.asList(4200, 22500, 67500, 150000, 180000, 210000)), 30000, 0, "vert"));
+		setCase(31, new CaseTerrain("Avenue ALLAL EL FASSI", 45000, new ArrayList<Integer>(Arrays.asList(3900, 19500, 58500, 135000, 165000, 191250)), 4000, 0, "vert"));
+		setCase(32, new CaseTerrain("L'HIVERNAGE", 45000, new ArrayList<Integer>(Arrays.asList(3900, 19500, 58500, 135000, 165000, 191250)), 4000, 0, "vert"));
+		setCase(34, new CaseTerrain("GUELIZ", 48000, new ArrayList<Integer>(Arrays.asList(4200, 22500, 67500, 150000, 180000, 210000)), 4000, 0, "vert"));
 		
-		setCase(37, new CaseTerrain("TARGA", 52500, new ArrayList<Integer>(Arrays.asList(5250, 26250, 75000, 165000, 195000, 225000)), 30000, 0, "bleu"));
-		setCase(39, new CaseTerrain("NAKHIL", 60000, new ArrayList<Integer>(Arrays.asList(7500, 30000, 90000, 210000, 255000, 300000)), 30000, 0, "bleu"));
+		setCase(37, new CaseTerrain("TARGA", 52500, new ArrayList<Integer>(Arrays.asList(5250, 26250, 75000, 165000, 195000, 225000)), 4500, 0, "bleu"));
+		setCase(39, new CaseTerrain("NAKHIL", 60000, new ArrayList<Integer>(Arrays.asList(7500, 30000, 90000, 210000, 255000, 300000)), 4500, 0, "bleu"));
 		
 		
 		/* INITIALISATION DES CARTES CHANCES */
