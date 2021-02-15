@@ -132,24 +132,26 @@ public  void chargeMainWindow(Stage primaryStage) {
 		
 		l_ParcGratuit.setTranslateX(3);
 		l_ParcGratuit.setTranslateY(68);
+		l_ParcGratuit.setStyle("-fx-font-family:'Century Gothic'");
 		root.getChildren().add(l_ParcGratuit);
 		
 		l_Message.setFont(Font.font("Consolas", 14));
 		l_Message.setTranslateX(95);
 		l_Message.setTranslateY(480);
 		l_Message.setMaxWidth(470);
+		l_Message.setStyle("-fx-font-family:'Century Gothic'");
 		root.getChildren().add(l_Message);
 
 		tourSuivant.setTranslateX(285);
 		tourSuivant.setTranslateY(533);
-		tourSuivant.setStyle("-fx-background-color: #ed1c24;-fx-text-fill: white;-fx-background-radius: 30px");
+		tourSuivant.setStyle("-fx-background-color: #ed1c24;-fx-text-fill: white;-fx-background-radius: 30px ;-fx-font-family:'Century Gothic'");
 		tourSuivant.setMaxWidth(100);
 		tourSuivant.setMaxHeight(30);
 		tourSuivant.setOnAction(new EvtTourSuivant());
 		tourSuivant.setDefaultButton(true);
 		
 		
-			b_Mute = new Button("MUSIQUE");
+			b_Mute = new Button("Musique");
 		
 	
 		
@@ -216,18 +218,21 @@ public  void chargeMainWindow(Stage primaryStage) {
 			l_nomJoueur.setTextFill(Couleurs[i]);
 			l_nomJoueur.setTranslateX(95+i*120);
 			l_nomJoueur.setTranslateY(100);
+			l_nomJoueur.setFont(Font.font("Century Gothic", 15));
 			root.getChildren().add(l_nomJoueur);
 
-			l_Joueurs.add(new Label(""+partie.getPM().getJoueur(i).getArgent()+"€"));
+			l_Joueurs.add(new Label(""+partie.getPM().getJoueur(i).getArgent()+"DH"));
 			l_Joueurs.get(i).setTranslateX(95+i*120);
 			l_Joueurs.get(i).setTranslateY(120);
-			l_Joueurs.get(i).setFont(Font.font("Arial", 15));
+			
+			l_Joueurs.get(i).setFont(Font.font("Century Gothic", 15));
 			root.getChildren().add(l_Joueurs.get(i));
 
 			l_ListeTerrains.add(new Label("\n"));
 			l_ListeTerrains.get(i).setTranslateX(95+i*120);
 			l_ListeTerrains.get(i).setTranslateY(140);
 			l_ListeTerrains.get(i).setMaxWidth(110);
+			l_ListeTerrains.get(i).setFont(Font.font("Century Gothic", 15));
 			root.getChildren().add(l_ListeTerrains.get(i));
 
 			l_Pions.add(new Circle(7));
@@ -257,6 +262,7 @@ public  void chargeMainWindow(Stage primaryStage) {
             @Override public void run() {
             	
             	l_Message.setTextFill(Couleurs[getPartie().getPM().getJoueurActifID()]);
+            	
             	l_Message.setText(msg);
             }
         });
@@ -280,7 +286,9 @@ public  void chargeMainWindow(Stage primaryStage) {
             		
             		String listeTerrains = pm.getJoueur(i).getListeStringTerrains();
             		listeTerrains = listeTerrains.replaceAll(",", "\n");
+            		l_ListeTerrains.get(i).setStyle("-fx-font-family:'Century Gothic'");
             		l_ListeTerrains.get(i).setText(listeTerrains);
+            		
         		}
         		
             }
@@ -567,7 +575,7 @@ public  void chargeMainWindow(Stage primaryStage) {
             	
             	Label vainqueur = new Label("Le vainqueur est "+pm.estVainqueur().getNom()+" !");
             	vainqueur.setTextFill(l_Pions.get(pm.estVainqueur().getID()).getFill());
-            	vainqueur.setFont(Font.font("Arial", 18));
+            	vainqueur.setFont(Font.font("Century Gothic", 18));
             	vainqueur.setTextFill(Color.RED);;
             	vainqueur.setTranslateX(160);
             	vainqueur.setTranslateY(525);
@@ -578,7 +586,7 @@ public  void chargeMainWindow(Stage primaryStage) {
         		
         		newPartie.setTranslateX(463);
         		newPartie.setTranslateY(533);
-        		newPartie.setStyle("-fx-background-color: #ed1c24;-fx-text-fill: white;-fx-background-radius: 30px");
+        		newPartie.setStyle("-fx-background-color: #ed1c24;-fx-text-fill: white;-fx-background-radius: 30px ;-fx-font-family:'Century Gothic'");
         		newPartie.setOnAction(new EvtNewPartie());
         		root.getChildren().add(newPartie);
         		

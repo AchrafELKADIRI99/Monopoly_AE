@@ -14,6 +14,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
@@ -60,7 +61,7 @@ public class ViewActionSurTerrain {
 	private void initRoot() {
 		root.setPadding(new Insets(10,10,10,10));
 		root.setSpacing(10);
-		root.setStyle("-fx-background-color: #CDE6D0; ");
+		root.setStyle("-fx-background-color:#c9f9b6;-fx-font-family:'Century Gothic' ");
 		
 		Image i_terrain;
 		
@@ -85,17 +86,21 @@ public class ViewActionSurTerrain {
 		root.getChildren().add(aside);
 		
 		l_Texte = new Label("Que voulez-vous faire sur le terrain "+ fp.getPartie().getPM().getCase(position).getNom() +" ?");
+		l_Texte.setFont(Font.font("Century Gothic"));
 		aside.getChildren().add(l_Texte);
 
 		HBox buttons_horiz = new HBox();
 		buttons_horiz.setSpacing(10);
 		
 		b_Poser = new Button("Poser une maison ("+fp.getPartie().getPM().getCase(position).getPrixMaison()+"DH)");
+		b_Poser.setStyle("-fx-background-radius: 30px;-fx-font-family:'Century Gothic';-fx-background-color: #1da64a;-fx-text-fill :#ffff");
 		b_Poser.setOnAction(new EvtPoser());
 		if(position != 5 && position != 15 && position != 25 && position != 35 && position != 12 && position != 28)
 			buttons_horiz.getChildren().add(b_Poser);
 		
 		b_Revendre = new Button("Revendre le terrain");
+		b_Revendre.setStyle("-fx-background-color: #ed1c24;-fx-background-radius: 30px;-fx-font-family:'Century Gothic';-fx-text-fill :#ffff ");
+
 		b_Revendre.setOnAction(new EvtRevendre());
 		buttons_horiz.getChildren().add(b_Revendre);
 

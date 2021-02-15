@@ -174,6 +174,7 @@ public class CaseTerrain extends Case {
 	@Override
 	public int getLoyer() {
 		int aPayer = loyer.get(getNbMaison());
+		
 		if(proprietaire.getListeCouleur().contains(this.getCouleur()) && getNbMaison() == 0)
 			aPayer*=2; // loyer double si le joueur possède tous les terrains d'une couleur mais sans maison.
 		

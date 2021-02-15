@@ -62,7 +62,7 @@ public class ViewCarteCommunaute {
 		root.setAlignment(Pos.CENTER_LEFT);
 		root.setPadding(new Insets(10,10,10,10));
 		root.setSpacing(15);
-		root.setStyle("-fx-background-color: #CDE6D0; -fx-border-style: dashed; -fx-border-width: 3px; -fx-border-color: blue");
+		root.setStyle("-fx-background-color: #c9f9b6; -fx-border-style: dashed; -fx-border-width: 3px; -fx-border-color: blue;-fx-font-family:'Century Gothic'");
 		
 		Image i_communaute = new Image("images/communaute.jpg");
 		ImageView iv_communaute = new ImageView(i_communaute);
@@ -77,6 +77,7 @@ public class ViewCarteCommunaute {
 		carte.getChildren().add(l_Description);
 		
 		b_Ok = new Button("OK");
+		b_Ok.setStyle("-fx-background-radius: 30px;-fx-font-family:'Century Gothic';-fx-background-color: #1da64a;-fx-text-fill :#ffff");
 		b_Ok.setDefaultButton(true);
 		b_Ok.setOnAction(new EvtValider());
 		carte.getChildren().add(b_Ok);

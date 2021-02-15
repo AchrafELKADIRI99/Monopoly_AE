@@ -74,7 +74,7 @@ public class CaseServicePublic extends Case {
 		
 		if(!this.getProprietaire().getEstPrison()) {
 			
-			int loyer = pm.des.lancerDes()*100;
+			int loyer = pm.des.lancerDes()*10;
 			if(fp!=null) {
 				fp.effacerDes();
 				fp.afficherDes(pm);

@@ -54,7 +54,7 @@ public class ViewAcheterTerrain {
 	private void initRoot() {
 		root.setPadding(new Insets(10,10,10,10));
 		root.setSpacing(10);
-		root.setStyle("-fx-background-color: #CDE6D0; ");
+		root.setStyle("-fx-background-color: #c9f9b6;-fx-font-family:'Century Gothic' ");
 		
 		Image i_terrain;
 		
@@ -85,10 +85,13 @@ public class ViewAcheterTerrain {
 		buttons_horiz.setSpacing(10);
 		
 		b_Oui = new Button("Oui");
+		b_Oui.setStyle("-fx-background-radius: 30px;-fx-font-family:'Century Gothic';-fx-background-color: #1da64a;-fx-text-fill :#ffff");
 		b_Oui.setOnAction(new EvtOui());
 		buttons_horiz.getChildren().add(b_Oui);
 		
 		b_Non = new Button("Non");
+		b_Non.setStyle("-fx-background-color: #ed1c24;-fx-background-radius: 30px;-fx-font-family:'Century Gothic';-fx-text-fill :#ffff ");
+
 		b_Non.setOnAction(new EvtNon());
 		buttons_horiz.getChildren().add(b_Non);
 
