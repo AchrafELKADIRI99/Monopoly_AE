@@ -8,7 +8,7 @@ import model.Player;
 
 
 // Définit un joueur et toutes ses données dans le jeu du Monopoly
-
+//ez monopoly
 
 
 public class Playermonop extends Player {
