@@ -32,11 +32,13 @@ import state.StopState;
  * @see FenetrePrincipale
  */
 public class ViewDemarrage  {
-
-	Context context = new Context();
-	StartState startState = new StartState();
-	StopState stopState = new StopState();
+	public static boolean eta;
+	private Context context = new Context();
+	public static Context context2 ;
+	private StartState startState = new StartState();
+	private StopState stopState = new StopState();
 	private MainWindow fp;
+	
 	private Stage stage;
 	private VBox root;
 	private Label l_NbJoueurs;
@@ -240,7 +242,7 @@ public class ViewDemarrage  {
 				fp.getStage().show();
 				stage.close();
 			}
-			
+			context2=context;
 			event.consume();
 		
 		}
@@ -271,18 +273,41 @@ public class ViewDemarrage  {
 				stopState.doAction(context);
 				b_Mute.setText("UNMUTE");
 				
-				
+				context2=context;
 				}
 		
 			else {
 				startState.doAction(context);
 				b_Mute.setText("MUTE");
-				
+				context2=context;
 			}
+		
 			
 		}
 	}
+	
 
+	public static Context con() {
+		return (context2);
+	}
+	public Context getContext() {
+		return context;
+	}
+	public void setContext(Context context) {
+		this.context = context;
+	}
+	public StartState getStartState() {
+		return startState;
+	}
+	public void setStartState(StartState startState) {
+		this.startState = startState;
+	}
+	public StopState getStopState() {
+		return stopState;
+	}
+	public void setStopState(StopState stopState) {
+		this.stopState = stopState;
+	}
 
 	
 }

@@ -38,7 +38,9 @@ import state.StopState;
  * Fenêtre javafx principale pour l'affichage du jeu de Monopoly. 
  */
 public class MainWindow {
-	Context context = new Context();
+	
+	
+	
 	StartState startState = new StartState();
 	StopState stopState = new StopState();
 
@@ -700,14 +702,14 @@ public  void chargeMainWindow(Stage primaryStage) {
 		public void handle(ActionEvent event) {
 			// TODO Auto-generated method stub
 			
-			if (context.etat()==true) {	
-				stopState.doAction(context);
+			if (ViewDemarrage.con().etat()==true) {	
+				stopState.doAction(ViewDemarrage.con());
 				b_Mute.setText("UNMUTE");
 				
 				}
 		
 			else {
-				startState.doAction(context);
+				startState.doAction(ViewDemarrage.con());
 				b_Mute.setText("MUTE");
 				
 			}
